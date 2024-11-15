@@ -15,37 +15,30 @@
 \section{Inleiding}%
 \label{sec:inleiding}
 
-Waarover zal je bachelorproef gaan? Introduceer het thema en zorg dat volgende zaken zeker duidelijk aanwezig zijn:
-
-\begin{itemize}
-  \item kaderen thema
-  \item de doelgroep
-  \item de probleemstelling en (centrale) onderzoeksvraag
-  \item de onderzoeksdoelstelling
-\end{itemize}
-
-Denk er aan: een typische bachelorproef is \textit{toegepast onderzoek}, wat betekent dat je start vanuit een concrete probleemsituatie in bedrijfscontext, een \textbf{casus}. Het is belangrijk om je onderwerp goed af te bakenen: je gaat voor die \textit{ene specifieke probleemsituatie} op zoek naar een goede oplossing, op basis van de huidige kennis in het vakgebied.
-
-De doelgroep moet ook concreet en duidelijk zijn, dus geen algemene of vaag gedefinieerde groepen zoals \emph{bedrijven}, \emph{developers}, \emph{Vlamingen}, enz. Je richt je in elk geval op it-professionals, een bachelorproef is geen populariserende tekst. Eén specifiek bedrijf (die te maken hebben met een concrete probleemsituatie) is dus beter dan \emph{bedrijven} in het algemeen.
-
-Formuleer duidelijk de onderzoeksvraag! De begeleiders lezen nog steeds te veel voorstellen waarin we geen onderzoeksvraag terugvinden.
-
-Schrijf ook iets over de doelstelling. Wat zie je als het concrete eindresultaat van je onderzoek, naast de uitgeschreven scriptie? Is het een proof-of-concept, een rapport met aanbevelingen, \ldots Met welk eindresultaat kan je je bachelorproef als een succes beschouwen?
-
+Veel web agencies gebruiken op dit moment verschillende losse tools voor het beheren van projecten, communicatie, en resources. Denk bijvoorbeeld aan tools zoals Trello voor takenbeheer, Slack voor communicatie, en Figma voor design. Hoewel deze tools nuttig zijn, ontbreekt het aan een centrale plek waar alles samenkomt. Dit leidt vaak tot inefficiënties, miscommunicatie en frustratie bij zowel medewerkers als klanten.
+\\
+\\
+Dit onderzoeksproject heeft als doel een all-in-one platform te ontwikkelen dat specifiek gericht is op de behoeften van web agencies. Het platform biedt een geïntegreerde oplossing die alle noodzakelijke tools bevat. Naast standaardfunctionaliteiten zoals project- en takenbeheer, bevat het platform een unieke resource library waar medewerkers designs, Figma-bestanden en code snippets kunnen opslaan en live aanpassen. Deze mogelijkheid vereenvoudigt het samenwerken tussen ontwerpers en ontwikkelaars aanzienlijk.
+\\
+\\
+Daarnaast is er een klantenzone, waar klanten toegang krijgen tot een overzicht van alle deliverables. Ze kunnen hier precies zien wat er wanneer gebeurt en voltooide deliverables bekijken of downloaden. Als een klant herhalingen nodig heeft van bepaalde onderdelen, kan dit eenvoudig worden aangevraagd via het platform. Dit verhoogt de transparantie en klanttevredenheid.
+\\
+\\
+De centrale probleemstelling is: Hoe kan een gecentraliseerd platform de interne workflow van web agencies verbeteren en tegelijkertijd de transparantie naar klanten vergroten? De onderzoeksvraag die hieruit volgt is: Welke functionaliteiten moeten aanwezig zijn in een platform dat zowel interne teams als klanten ondersteunt in het projectproces?
+\\
+\\
+Het einddoel is een werkend prototype dat getest kan worden door agencies en klanten. Het platform zal web agencies helpen hun werkprocessen te verbeteren, beter samen te werken en effectiever te communiceren met hun klanten.
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
 
-Hier beschrijf je de \emph{state-of-the-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
+Er zijn verschillende tools beschikbaar voor projectbeheer en communicatie binnen web agencies, zoals Trello, Asana, en Slack, maar geen van deze biedt een geïntegreerde oplossing die specifiek gericht is op het beheren van design- en code-resources. De meeste platforms voor projectbeheer bieden geen mogelijkheid voor het live bewerken van code snippets of het delen van Figma-bestanden in een gestructureerde en collaboratieve manier. Het onderzoek van~\textcite{Reid2014} en~\textcite{Alexander2019} benadrukt dat de samenwerking tussen ontwerpers en ontwikkelaars vaak wordt verslechterd door het gebrek aan geïntegreerde tools.
+\\
+\\
+Dit platform zal deze gat vullen door een systematische aanpak van zowel projectbeheer als resource management, waarbij de resource library een essentieel onderdeel is van de workflow. Er is weinig literatuur die ingaat op het combineren van projectmanagement, klantcommunicatie en klant deliverables met een geavanceerde resource library. Dit onderzoek zal deze nieuwe benadering van integratie verder onderzoeken.
 
-Je mag de titel van deze sectie ook aanpassen (literatuurstudie, stand van zaken, enz.). Zijn er al gelijkaardige onderzoeken gevoerd? Wat concluderen ze? Wat is het verschil met jouw onderzoek?
 
-Verwijs bij elke introductie van een term of bewering over het domein naar de vakliteratuur, bijvoorbeeld~\autocite{Hykes2013}! Denk zeker goed na welke werken je refereert en waarom.
-
-Draag zorg voor correcte literatuurverwijzingen! Een bronvermelding hoort thuis \emph{binnen} de zin waar je je op die bron baseert, dus niet er buiten! Maak meteen een verwijzing als je gebruik maakt van een bron. Doe dit dus \emph{niet} aan het einde van een lange paragraaf. Baseer nooit teveel aansluitende tekst op eenzelfde bron.
-
-Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle nodige info aanwezig is om de bron terug te vinden (zoals uitvoerig besproken in de lessen Research Methods).
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
 % \autocite{KEY} => (Auteur, jaartal) Gebruik dit als de naam van de auteur
@@ -54,31 +47,31 @@ Als je informatie over bronnen verzamelt in JabRef, zorg er dan voor dat alle no
 %   functie heeft in de zin (bv. ``Uit onderzoek door Doll & Hill (1954) bleek
 %   ...'')
 
-Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur van de tekst kan verduidelijken.
 
 %---------- Methodologie ------------------------------------------------------
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Hier beschrijf je hoe je van plan bent het onderzoek te voeren. Welke onderzoekstechniek ga je toepassen om elk van je onderzoeksvragen te beantwoorden? Gebruik je hiervoor literatuurstudie, interviews met belanghebbenden (bv.~voor requirements-analyse), experimenten, simulaties, vergelijkende studie, risico-analyse, PoC, \ldots?
+De ontwikkelingsmethode zal bestaan uit 3 fases, waarbij het platform in fasen wordt ontworpen, getest en verbeterd op basis van feedback van school.
+\\
+\\
+In de eerste fase zal het ontwerp van de gebruikersinterface (UI) en gebruikerservaring (UX) plaatsvinden, waarbij de nadruk ligt op gebruiksvriendelijkheid en functionaliteit. In de tweede fase zal het platform worden ontwikkeld in Next.js voor de webversie en React Native voor de mobiele app. Supabase of neon zal worden gebruikt voor de opslag van gegevens, en Socket.io zal worden ingezet voor real-time samenwerking. In de derde fase zullen tests worden uitgevoerd om feedback te verzamelen en het platform te verbeteren.
+\\
+\\
+De tools die gebruikt zullen worden, zijn onder andere Figma voor het ontwerp, Visual Studio Code voor de ontwikkeling, en GitHub voor versiebeheer. De tijdsplanning is als volgt:
 
-Valt je onderwerp onder één van de typische soorten bachelorproeven die besproken zijn in de lessen Research Methods (bv.\ vergelijkende studie of risico-analyse)? Zorg er dan ook voor dat we duidelijk de verschillende stappen terug vinden die we verwachten in dit soort onderzoek!
-
-Vermijd onderzoekstechnieken die geen objectieve, meetbare resultaten kunnen opleveren. Enquêtes, bijvoorbeeld, zijn voor een bachelorproef informatica meestal \textbf{niet geschikt}. De antwoorden zijn eerder meningen dan feiten en in de praktijk blijkt het ook bijzonder moeilijk om voldoende respondenten te vinden. Studenten die een enquête willen voeren, hebben meestal ook geen goede definitie van de populatie, waardoor ook niet kan aangetoond worden dat eventuele resultaten representatief zijn.
-
-Uit dit onderdeel moet duidelijk naar voor komen dat je bachelorproef ook technisch voldoen\-de diepgang zal bevatten. Het zou niet kloppen als een bachelorproef informatica ook door bv.\ een student marketing zou kunnen uitgevoerd worden.
-
-Je beschrijft ook al welke tools (hardware, software, diensten, \ldots) je denkt hiervoor te gebruiken of te ontwikkelen.
-
-Probeer ook een tijdschatting te maken. Hoe lang zal je met elke fase van je onderzoek bezig zijn en wat zijn de concrete \emph{deliverables} in elke fase?
+\begin{itemize}
+    \item Fase 1 (UI/UX ontwerp): 1 week
+    \item Fase 2 (Platformontwikkeling): 9 weken
+    \item Fase 3 (Testen en feedback): 2 weken
+    
+\end{itemize}
 
 %---------- Verwachte resultaten ----------------------------------------------
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Hier beschrijf je welke resultaten je verwacht. Als je metingen en simulaties uitvoert, kan je hier al mock-ups maken van de grafieken samen met de verwachte conclusies. Benoem zeker al je assen en de onderdelen van de grafiek die je gaat gebruiken. Dit zorgt ervoor dat je concreet weet welk soort data je moet verzamelen en hoe je die moet meten.
-
-Wat heeft de doelgroep van je onderzoek aan het resultaat? Op welke manier zorgt jouw bachelorproef voor een meerwaarde?
-
-Hier beschrijf je wat je verwacht uit je onderzoek, met de motivatie waarom. Het is \textbf{niet} erg indien uit je onderzoek andere resultaten en conclusies vloeien dan dat je hier beschrijft: het is dan juist interessant om te onderzoeken waarom jouw hypothesen niet overeenkomen met de resultaten.
-
+Het verwachte resultaat is een werkend platform dat takenbeheer, meetings, resourcebeheer, en klantinteractie combineert in één systeem. Het biedt een gestroomlijnde ervaring voor zowel medewerkers als klanten.Klanten zullen profiteren van een overzichtelijke klantenzone, terwijl medewerkers efficiënter kunnen samenwerken dankzij de resource library en real-time bewerkingsmogelijkheden.
+\\
+\\
+Dit project zal agencies in staat stellen om hun processen te stroomlijnen, de communicatie te verbeteren, en de klanttevredenheid te verhogen. Het platform biedt niet alleen een oplossing voor bestaande problemen, maar ook een toekomstgerichte aanpak voor web agencies die willen groeien en innoveren.
