@@ -15,29 +15,54 @@
 \section{Inleiding}%
 \label{sec:inleiding}
 
-Veel web agencies gebruiken op dit moment verschillende losse tools voor het beheren van projecten, communicatie, en resources. Denk bijvoorbeeld aan tools zoals Trello voor takenbeheer, Slack voor communicatie, en Figma voor design. Hoewel deze tools nuttig zijn, ontbreekt het aan een centrale plek waar alles samenkomt. Dit leidt vaak tot inefficiënties, miscommunicatie en frustratie bij zowel medewerkers als klanten.
+Veel web agencies gebruiken momenteel verschillende losse tools voor het beheren van projecten, communicatie, en resources. Denk bijvoorbeeld aan tools zoals Trello voor takenbeheer, Slack voor communicatie, en Figma voor design. Hoewel deze tools nuttig zijn, ontbreekt het vaak aan een centrale plek waar alles samenkomt. Dit leidt vaak tot inefficiënties, miscommunicatie en frustratie bij zowel medewerkers als klanten. Deze knelpunten komen voort uit het gebruik van verschillende systemen die niet altijd goed integreren, wat leidt tot extra werk, vertragingen en misverstanden.
 \\
 \\
-Dit onderzoeksproject heeft als doel een all-in-one platform te ontwikkelen dat specifiek gericht is op de behoeften van web agencies. Het platform biedt een geïntegreerde oplossing die alle noodzakelijke tools bevat. Naast standaardfunctionaliteiten zoals project- en takenbeheer, bevat het platform een unieke resource library waar medewerkers designs, Figma-bestanden en code snippets kunnen opslaan en live aanpassen. Deze mogelijkheid vereenvoudigt het samenwerken tussen ontwerpers en ontwikkelaars aanzienlijk.
+Dit onderzoeksproject heeft als doel een all-in-one platform te ontwikkelen dat specifiek gericht is op de behoeften van web agencies. Het platform biedt een geïntegreerde oplossing die alle noodzakelijke tools bevat. Naast standaardfunctionaliteiten zoals project- en takenbeheer, bevat het platform een unieke resource library waar medewerkers designs, Figma-bestanden en code snippets kunnen opslaan en live aanpassen. Deze mogelijkheid vereenvoudigt het samenwerken tussen ontwerpers en ontwikkelaars aanzienlijk, wat de efficiëntie zou kunnen verbeteren.
 \\
 \\
 Daarnaast is er een klantenzone, waar klanten toegang krijgen tot een overzicht van alle deliverables. Ze kunnen hier precies zien wat er wanneer gebeurt en voltooide deliverables bekijken of downloaden. Als een klant herhalingen nodig heeft van bepaalde onderdelen, kan dit eenvoudig worden aangevraagd via het platform. Dit verhoogt de transparantie en klanttevredenheid.
 \\
 \\
-De centrale probleemstelling is: Hoe kan een gecentraliseerd platform de interne workflow van web agencies verbeteren en tegelijkertijd de transparantie naar klanten vergroten? De onderzoeksvraag die hieruit volgt is: Welke functionaliteiten moeten aanwezig zijn in een platform dat zowel interne teams als klanten ondersteunt in het projectproces?
-\\
-\\
-Het einddoel is een werkend prototype dat getest kan worden door agencies en klanten. Het platform zal web agencies helpen hun werkprocessen te verbeteren, beter samen te werken en effectiever te communiceren met hun klanten.
+De centrale probleemstelling is: \textcolor{gray}{Hoe kan een gecentraliseerd platform de interne workflow van web agencies verbeteren en tegelijkertijd de transparantie naar klanten vergroten?}
+
+
+\subsection{Deelvragen m.b.t. het probleemdomein}
+
+De deelvragen met betrekking tot het probleemdomein zijn gericht op het identificeren van de specifieke bottlenecks in de processen en communicatie binnen web agencies. Deze deelvragen richten zich op het begrijpen van de interne werkstromen en de knelpunten die ontstaan door het gebruik van verschillende losse tools. Enkele mogelijke deelvragen zijn:
+
+\begin{itemize}
+    \item \textcolor{gray}{Wat zijn de specifieke bottlenecks die ontstaan door het gebruik van gescheiden tools voor projectbeheer, communicatie en resourcebeheer binnen web agencies?}
+    \item \textcolor{gray}{Hoe beïnvloeden de gescheiden systemen de samenwerking tussen ontwerpers, ontwikkelaars en klanten? Welke communicatieproblemen ontstaan hierdoor?}
+    \item \textcolor{gray}{In welke mate zorgen de integratieproblemen van tools voor vertragingen in het projectproces en onduidelijkheden in de klantcommunicatie?}
+    \item \textcolor{gray}{Wat zijn de uitdagingen bij het beheren van design- en code-resources in een gefragmenteerde werkomgeving, en hoe beïnvloedt dit de productiviteit van medewerkers?}
+    \item \textcolor{gray}{Hoe beïnvloedt het gebrek aan transparantie en overzicht voor klanten de klanttevredenheid en hun vertrouwen in het projectproces?}
+\end{itemize}
+
+\subsection{Deelvragen m.b.t. het oplossingsdomein}
+
+De deelvragen met betrekking tot het oplossingsdomein richten zich op de kenmerken en vereisten van een platform dat deze bottlenecks en inefficiënties kan verhelpen. Deze vragen helpen om de belangrijkste functionaliteiten van het platform te bepalen die de workflow binnen web agencies kunnen verbeteren en tegelijkertijd de klanttevredenheid kunnen verhogen:
+
+\begin{itemize}
+    \item \textcolor{gray}{Welke functionaliteiten moeten er aanwezig zijn in een platform om een geïntegreerde oplossing te bieden voor projectbeheer, communicatie en resourcebeheer binnen web agencies?}
+    \item \textcolor{gray}{Hoe kan een platform de samenwerking tussen ontwerpers en ontwikkelaars verbeteren door middel van een resource library voor live bewerking van Figma-bestanden en code snippets?}
+    \item \textcolor{gray}{Welke elementen moeten er aanwezig zijn in een klantenzone om de transparantie en klanttevredenheid te verbeteren?}
+    \item \textcolor{gray}{Hoe kan real-time samenwerking tussen medewerkers en klanten effectief worden geïmplementeerd in een platform?}
+\end{itemize}
+
+Het einddoel van dit project is een werkend prototype dat getest kan worden door agencies en klanten, met als doel de werkprocessen te verbeteren, de samenwerking te vergemakkelijken en de communicatie met klanten te optimaliseren.
+
 %---------- Stand van zaken ---------------------------------------------------
 
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
-
-Er zijn verschillende tools beschikbaar voor projectbeheer en communicatie binnen web agencies, zoals Trello, Asana, en Slack, maar geen van deze biedt een geïntegreerde oplossing die specifiek gericht is op het beheren van design- en code-resources. De meeste platforms voor projectbeheer bieden geen mogelijkheid voor het live bewerken van code snippets of het delen van Figma-bestanden in een gestructureerde en collaboratieve manier. Het onderzoek van~\textcite{Reid2014} en~\textcite{Alexander2019} benadrukt dat de samenwerking tussen ontwerpers en ontwikkelaars vaak wordt verslechterd door het gebrek aan geïntegreerde tools.
+Er zijn verschillende tools beschikbaar voor projectbeheer en communicatie binnen web agencies, zoals Trello, Asana en Slack, maar geen van deze biedt een oplossing die alle functies samenbrengt. Veel van deze platforms bieden geen mogelijkheid om code snippets live te bewerken of Figma-bestanden op een georganiseerde manier te delen. Onderzoek van~\textcite{Reid2014} en~\textcite{Alexander2019} toont aan dat de samenwerking tussen ontwerpers en ontwikkelaars vaak moeilijker is door het gebruik van verschillende, niet-geïntegreerde tools.
 \\
 \\
-Dit platform zal deze gat vullen door een systematische aanpak van zowel projectbeheer als resource management, waarbij de resource library een essentieel onderdeel is van de workflow. Er is weinig literatuur die ingaat op het combineren van projectmanagement, klantcommunicatie en klant deliverables met een geavanceerde resource library. Dit onderzoek zal deze nieuwe benadering van integratie verder onderzoeken.
-
+Er is een duidelijke vraag naar een centrale plek waar verschillende functies voor projectbeheer, communicatie en resources samenkomen.~\textcite{Santoso2024} stelt dat zulke platforms niet alleen projectbeheer en taakorganisatie moeten bieden, maar ook samenwerking tussen verschillende teams, zoals ontwerpers en ontwikkelaars, moeten bevorderen. Het combineren van projectbeheer, klantcommunicatie en resourcebeheer in één systeem kan volgens~\textcite{Chris2024} de klanttevredenheid verbeteren en de werkdruk bij medewerkers verlichten.
+\\
+\\
+Dit platform richt zich op het oplossen van deze problemen door een alles-in-één oplossing te bieden voor projectbeheer en resourcebeheer, met de resource library als een belangrijk onderdeel van de workflow. Er is weinig onderzoek dat de integratie van projectmanagement, klantcommunicatie en een geavanceerde resource library bespreekt. Dit onderzoek zal deze nieuwe benadering verder onderzoeken.
 
 
 % Voor literatuurverwijzingen zijn er twee belangrijke commando's:
@@ -55,7 +80,7 @@ Dit platform zal deze gat vullen door een systematische aanpak van zowel project
 De ontwikkelingsmethode zal bestaan uit 3 fases, waarbij het platform in fasen wordt ontworpen, getest en verbeterd op basis van feedback van school.
 \\
 \\
-In de eerste fase zal het ontwerp van de gebruikersinterface (UI) en gebruikerservaring (UX) plaatsvinden, waarbij de nadruk ligt op gebruiksvriendelijkheid en functionaliteit. In de tweede fase zal het platform worden ontwikkeld in Next.js voor de webversie en React Native voor de mobiele app. Supabase of neon zal worden gebruikt voor de opslag van gegevens, en Socket.io zal worden ingezet voor real-time samenwerking. In de derde fase zullen tests worden uitgevoerd om feedback te verzamelen en het platform te verbeteren.
+In de eerste fase zal het ontwerp van de gebruikersinterface(UI) en gebruikerservaring(UX) plaatsvinden, waarbij de nadruk ligt op gebruiksvriendelijkheid en functionaliteit. In de tweede fase zal het platform worden ontwikkeld in Next.js voor de webversie. Supabase of neon zal worden gebruikt voor de opslag van gegevens, en Socket.io zal worden ingezet voor real-time samenwerking. Tijdens de derde fase worden kwalitatieve interviews en surveys uitgevoerd met medewerkers van web agencies om te achterhalen in hoeverre het platform hun werkprocessen verbeterd. Ook worden A/B-tests uitgevoerd om de effectiviteit van specifieke functionaliteiten te evalueren.
 \\
 \\
 De tools die gebruikt zullen worden, zijn onder andere Figma voor het ontwerp, Visual Studio Code voor de ontwikkeling, en GitHub voor versiebeheer. De tijdsplanning is als volgt:
@@ -71,7 +96,7 @@ De tools die gebruikt zullen worden, zijn onder andere Figma voor het ontwerp, V
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Het verwachte resultaat is een werkend platform dat takenbeheer, meetings, resourcebeheer, en klantinteractie combineert in één systeem. Het biedt een gestroomlijnde ervaring voor zowel medewerkers als klanten.Klanten zullen profiteren van een overzichtelijke klantenzone, terwijl medewerkers efficiënter kunnen samenwerken dankzij de resource library en real-time bewerkingsmogelijkheden.
+Het verwachte resultaat is een werkend platform dat takenbeheer, meetings, resourcebeheer, en klantinteractie combineert in één systeem. Het biedt een gestroomlijnde ervaring voor zowel medewerkers als klanten. Klanten zullen profiteren van een overzichtelijke klantenzone, terwijl medewerkers efficiënter kunnen samenwerken dankzij de resource library en real-time bewerkingsmogelijkheden.
 \\
 \\
 Dit project zal agencies in staat stellen om hun processen te stroomlijnen, de communicatie te verbeteren, en de klanttevredenheid te verhogen. Het platform biedt niet alleen een oplossing voor bestaande problemen, maar ook een toekomstgerichte aanpak voor web agencies die willen groeien en innoveren.
