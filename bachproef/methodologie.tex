@@ -2,29 +2,99 @@
 %% Methodologie
 %%=============================================================================
 
-\chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}%
+\chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}
 \label{ch:methodologie}
 
-%% TODO: In dit hoofstuk geef je een korte toelichting over hoe je te werk bent
-%% gegaan. Verdeel je onderzoek in grote fasen, en licht in elke fase toe wat
-%% de doelstelling was, welke deliverables daar uit gekomen zijn, en welke
-%% onderzoeksmethoden je daarbij toegepast hebt. Verantwoord waarom je
-%% op deze manier te werk gegaan bent.
-%% 
-%% Voorbeelden van zulke fasen zijn: literatuurstudie, opstellen van een
-%% requirements-analyse, opstellen long-list (bij vergelijkende studie),
-%% selectie van geschikte tools (bij vergelijkende studie, "short-list"),
-%% opzetten testopstelling/PoC, uitvoeren testen en verzamelen
-%% van resultaten, analyse van resultaten, ...
-%%
-%% !!!!! LET OP !!!!!
-%%
-%% Het is uitdrukkelijk NIET de bedoeling dat je het grootste deel van de corpus
-%% van je bachelorproef in dit hoofstuk verwerkt! Dit hoofdstuk is eerder een
-%% kort overzicht van je plan van aanpak.
-%%
-%% Maak voor elke fase (behalve het literatuuronderzoek) een NIEUW HOOFDSTUK aan
-%% en geef het een gepaste titel.
+Dit hoofdstuk beschrijft de methodologische aanpak die is gebruikt voor het onderzoek en de ontwikkeling van het geïntegreerde platform. Het onderzoek is uitgevoerd in verschillende fasen, elk met specifieke doelstellingen en methoden.
 
-\lipsum[21-25]
+\section{Onderzoeksfasen}
+\label{sec:onderzoeksfasen}
+
+Het onderzoek is opgedeeld in vijf hoofdfasen:
+
+\begin{enumerate}
+    \item Literatuuronderzoek en requirements analyse
+    \item Design en architectuur planning
+    \item Ontwikkeling en implementatie
+    \item Testing en evaluatie
+    \item Analyse en conclusievorming
+\end{enumerate}
+
+\section{Fase 1: Literatuuronderzoek en Requirements}
+\label{sec:fase1}
+
+De eerste fase bestond uit een uitgebreid literatuuronderzoek naar bestaande oplossingen en best practices. Hierbij zijn verschillende onderzoeksmethoden toegepast:
+
+\begin{itemize}
+    \item Systematische review van academische literatuur via IEEE Xplore en ACM Digital Library
+    \item Analyse van bestaande platforms en hun beperkingen
+    \item Interviews met potentiële eindgebruikers voor requirements gathering
+\end{itemize}
+
+Deze fase resulteerde in een gedetailleerd requirements document en een duidelijk beeld van de huidige stand van zaken in het vakgebied.
+
+\section{Fase 2: Design en Architectuur}
+\label{sec:fase2}
+
+De tweede fase focuste op het ontwerp van de technische architectuur en gebruikersinterface:
+
+\begin{itemize}
+    \item Ontwikkeling van technische architectuur gebaseerd op Next.js
+    \item Design van database schema's met Prisma
+    \item Opstellen van UI/UX wireframes en prototypes
+    \item Planning van integraties met externe systemen
+\end{itemize}
+
+Hierbij is gebruik gemaakt van moderne design methodologieën zoals User-Centered Design en iteratieve feedback sessies met stakeholders.
+
+\section{Fase 3: Ontwikkeling}
+\label{sec:fase3}
+
+De ontwikkelingsfase volgde een agile aanpak met twee-wekelijkse sprints:
+
+\begin{itemize}
+    \item Implementatie van core functionaliteiten:
+    \begin{itemize}
+        \item Project en task management systeem
+        \item Resource library met code editor
+        \item Klantportaal met fase-tracking
+        \item Calendar integratie
+    \end{itemize}
+    \item Continuous integration en deployment pipeline
+    \item Code reviews en technische documentatie
+\end{itemize}
+
+\section{Fase 4: Testing en Evaluatie}
+\label{sec:fase4}
+
+De evaluatiefase bestond uit verschillende testmethodologieën:
+
+\begin{itemize}
+    \item Functionele tests van alle componenten
+    \item Usability testing met eindgebruikers
+    \item Performance testing van kritieke functionaliteiten
+    \item Security audits van het platform
+\end{itemize}
+
+Feedback werd verzameld via:
+\begin{itemize}
+    \item Gestructureerde gebruikersinterviews
+    \item System Usability Scale (SUS) vragenlijsten
+    \item Performance metrics analyse
+\end{itemize}
+
+\section{Fase 5: Analyse en Conclusie}
+\label{sec:fase5}
+
+De laatste fase focuste op het analyseren van de verzamelde data en het trekken van conclusies:
+
+\begin{itemize}
+    \item Analyse van gebruikersfeedback en testresultaten
+    \item Vergelijking met initiële requirements
+    \item Identificatie van verbeterpunten en aanbevelingen
+    \item Documentatie van bevindingen en conclusies
+\end{itemize}
+
+Deze methodologische aanpak heeft geleid tot een systematische ontwikkeling en evaluatie van het platform, waarbij elke fase heeft bijgedragen aan het beantwoorden van de onderzoeksvragen. De gedetailleerde resultaten van elke fase worden in de volgende hoofdstukken besproken.
+
 

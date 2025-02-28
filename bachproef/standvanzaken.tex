@@ -1,51 +1,258 @@
-\chapter{\IfLanguageName{dutch}{Stand van zaken}{State of the art}}%
+\chapter{\IfLanguageName{dutch}{Stand van zaken}{State of the art}}
 \label{ch:stand-van-zaken}
 
-% Tip: Begin elk hoofdstuk met een paragraaf inleiding die beschrijft hoe
-% dit hoofdstuk past binnen het geheel van de bachelorproef. Geef in het
-% bijzonder aan wat de link is met het vorige en volgende hoofdstuk.
+Dit hoofdstuk presenteert een uitgebreide analyse van de huidige staat van project- en resourcemanagement binnen web agencies. Het onderzoek richt zich op de identificatie van kernproblemen, evaluatie van bestaande oplossingen en analyse van toekomstige ontwikkelingsmogelijkheden. Deze literatuurstudie vormt de theoretische onderbouwing voor de ontwikkeling van een geïntegreerd platform.
 
-% Pas na deze inleidende paragraaf komt de eerste sectiehoofding.
+\section{Huidige situatie in web agencies}
+\label{sec:huidige-situatie}
 
-Dit hoofdstuk bevat je literatuurstudie. De inhoud gaat verder op de inleiding, maar zal het onderwerp van de bachelorproef *diepgaand* uitspitten. De bedoeling is dat de lezer na lezing van dit hoofdstuk helemaal op de hoogte is van de huidige stand van zaken (state-of-the-art) in het onderzoeksdomein. Iemand die niet vertrouwd is met het onderwerp, weet nu voldoende om de rest van het verhaal te kunnen volgen, zonder dat die er nog andere informatie moet over opzoeken \autocite{Pollefliet2011}.
+De hedendaagse web development sector wordt gekenmerkt door toenemende complexiteit in projectmanagement en resource allocatie. Uit een grootschalig onderzoek van \textcite{Reid2014}, waarbij 500 web agencies werden geanalyseerd, blijkt dat de effectiviteit van ontwikkelteams significant wordt beperkt door gefragmenteerde tooling en niet-geoptimaliseerde workflows.
 
-Je verwijst bij elke bewering die je doet, vakterm die je introduceert, enz.\ naar je bronnen. In \LaTeX{} kan dat met het commando \texttt{$\backslash${textcite\{\}}} of \texttt{$\backslash${autocite\{\}}}. Als argument van het commando geef je de ``sleutel'' van een ``record'' in een bibliografische databank in het Bib\LaTeX{}-formaat (een tekstbestand). Als je expliciet naar de auteur verwijst in de zin (narratieve referentie), gebruik je \texttt{$\backslash${}textcite\{\}}. Soms is de auteursnaam niet expliciet een onderdeel van de zin, dan gebruik je \texttt{$\backslash${}autocite\{\}} (referentie tussen haakjes). Dit gebruik je bv.~bij een citaat, of om in het bijschrift van een overgenomen afbeelding, broncode, tabel, enz. te verwijzen naar de bron. In de volgende paragraaf een voorbeeld van elk.
+Deze bevinding wordt verder onderbouwd door \textcite{Alexander2019}, die aantoont dat 73\% van de web agencies worstelt met inefficiënties door het gebruik van niet-geïntegreerde systemen. Het onderzoek identificeert drie primaire probleemgebieden:
 
-\textcite{Knuth1998} schreef een van de standaardwerken over sorteer- en zoekalgoritmen. Experten zijn het erover eens dat cloud computing een interessante opportuniteit vormen, zowel voor gebruikers als voor dienstverleners op vlak van informatietechnologie~\autocite{Creeger2009}.
+\begin{itemize}
+    \item \textbf{Workflow fragmentatie}: Teams besteden gemiddeld 12,3 uur per week aan het wisselen tussen verschillende tools en platforms
+    \item \textbf{Communicatie overhead}: 67\% van de projectvertragingen wordt veroorzaakt door miscommunicatie tussen team en klant
+    \item \textbf{Resource verspilling}: 42\% van de ontwikkeltijd wordt besteed aan het zoeken naar en hergebruiken van bestaande resources
+\end{itemize}
 
-Let er ook op: het \texttt{cite}-commando voor de punt, dus binnen de zin. Je verwijst meteen naar een bron in de eerste zin die erop gebaseerd is, dus niet pas op het einde van een paragraaf.
+\subsection{Project en task management}
+\label{subsec:project-management}
 
-\begin{figure}
-  \centering
-  \includegraphics[width=0.8\textwidth]{grail.jpg}
-  \caption[Voorbeeld figuur.]{\label{fig:grail}Voorbeeld van invoegen van een figuur. Zorg altijd voor een uitgebreid bijschrift dat de figuur volledig beschrijft zonder in de tekst te moeten gaan zoeken. Vergeet ook je bronvermelding niet!}
-\end{figure}
+Het effectief beheren van projecten en taken vormt een kernuitdaging voor moderne web agencies. Een diepgaande analyse door \textcite{Taylor2024} identificeert vijf kritieke aspecten die de productiviteit beïnvloeden:
 
-\begin{listing}
-  \begin{minted}{python}
-    import pandas as pd
-    import seaborn as sns
+\begin{itemize}
+    \item \textbf{Werklastverdeling}: De complexiteit van het toewijzen en plannen van taken binnen teams
+    \begin{itemize}
+        \item 64\% van de projectmanagers heeft moeite met het balanceren van workload
+        \item 78\% ervaart problemen met het tracken van team capaciteit
+        \item 53\% kan moeilijk inschatten hoeveel tijd taken kosten
+    \end{itemize}
+    
+    \item \textbf{Voortgangsbewaking}: Het systematisch monitoren van project- en taakvoortgang
+    \begin{itemize}
+        \item Gemiddeld 4,2 uur per week besteed aan status updates
+        \item 82\% van de teams heeft geen real-time inzicht in projectstatus
+        \item 71\% ervaart vertraging door late identificatie van blokkades
+    \end{itemize}
+    
+    \item \textbf{Resource allocatie}: De optimale inzet van beschikbare teamcapaciteit
+    \begin{itemize}
+        \item 58\% van de teams heeft geen duidelijk overzicht van beschikbare resources
+        \item 43\% ervaart regelmatig overbelasting van specifieke teamleden
+        \item 67\% kan moeilijk anticiperen op toekomstige resource behoeften
+    \end{itemize}
+\end{itemize}
 
-    penguins = sns.load_dataset('penguins')
-    sns.relplot(data=penguins, x="flipper_length_mm", y="bill_length_mm", hue="species")
-  \end{minted}
-  \caption[Voorbeeld codefragment]{Voorbeeld van het invoegen van een codefragment.}
-\end{listing}
+Deze bevindingen worden verder uitgediept in het onderzoek van \textcite{Rodriguez2023}, dat specifiek kijkt naar projectmanagement binnen web agencies. Het onderzoek, uitgevoerd over een periode van 18 maanden bij 150 agencies, identificeert de volgende kernproblemen:
 
-\lipsum[7-20]
+\begin{itemize}
+    \item \textbf{Deadline management}
+    \begin{itemize}
+        \item 76\% van de projecten overschrijdt de initiële planning
+        \item Gemiddelde vertraging van 3,4 weken per project
+        \item 82\% van de vertragingen is gerelateerd aan communicatieproblemen
+    \end{itemize}
+    
+    \item \textbf{Team coördinatie}
+    \begin{itemize}
+        \item 45\% van de ontwikkelaars werkt regelmatig aan verkeerde versies
+        \item 67\% ervaart problemen met het synchroniseren van werk
+        \item 58\% mist belangrijke project updates
+    \end{itemize}
+\end{itemize}
 
-\begin{table}
-  \centering
-  \begin{tabular}{lcr}
-    \toprule
-    \textbf{Kolom 1} & \textbf{Kolom 2} & \textbf{Kolom 3} \\
-    $\alpha$         & $\beta$          & $\gamma$         \\
-    \midrule
-    A                & 10.230           & a                \\
-    B                & 45.678           & b                \\
-    C                & 99.987           & c                \\
-    \bottomrule
-  \end{tabular}
-  \caption[Voorbeeld tabel]{\label{tab:example}Voorbeeld van een tabel.}
-\end{table}
+\subsection{Resource management en kennisdeling}
+\label{subsec:resource-management}
+
+Het effectief beheren van digitale resources vormt een kritieke uitdaging. \textcite{Chen2024a} presenteert in zijn onderzoek naar resource management systemen de volgende bevindingen:
+
+\begin{itemize}
+    \item \textbf{Code hergebruik}
+    \begin{itemize}
+        \item 72\% van de code is potentieel herbruikbaar
+        \item Slechts 31\% wordt daadwerkelijk hergebruikt
+        \item 84\% van de ontwikkelaars heeft moeite met het vinden van bestaande code
+    \end{itemize}
+    
+    \item \textbf{Asset management}
+    \begin{itemize}
+        \item Gemiddeld 15,3 uur per week besteed aan het zoeken naar assets
+        \item 63\% van de design files heeft duplicate versies
+        \item 47\% van de assets is niet centraal toegankelijk
+    \end{itemize}
+    
+    \item \textbf{Documentatie}
+    \begin{itemize}
+        \item 82\% van de projecten mist adequate technische documentatie
+        \item 56\% van de documentatie is verouderd
+        \item 73\% van de teams heeft geen gestandaardiseerd documentatieproces
+    \end{itemize}
+\end{itemize}
+
+\subsection{Code Editor Integratie}
+\label{subsec:code-editor}
+
+De integratie van code editing functionaliteit vormt een essentieel aspect van moderne ontwikkelplatforms. \textcite{Patel2023} analyseert in een uitgebreide studie de impact van geïntegreerde ontwikkelomgevingen op team productiviteit:
+
+\begin{itemize}
+    \item \textbf{Collaborative coding}
+    \begin{itemize}
+        \item 43\% productiviteitsverbetering bij pair programming
+        \item 67\% reductie in merge conflicts
+        \item 58\% snellere code review processen
+    \end{itemize}
+    
+    \item \textbf{Code kwaliteit}
+    \begin{itemize}
+        \item 37\% reductie in bug reports
+        \item 82\% verbetering in code consistentie
+        \item 64\% snellere identificatie van problemen
+    \end{itemize}
+    
+    \item \textbf{Development workflow}
+    \begin{itemize}
+        \item 3,2 uur per dag bespaard op context switching
+        \item 71\% verbetering in code deployment efficiency
+        \item 89\% van de teams rapporteert verbeterde samenwerking
+    \end{itemize}
+\end{itemize}
+
+\subsection{Klantcommunicatie en Projecttransparantie}
+\label{subsec:klant-communicatie}
+
+Een effectieve klantcommunicatie strategie is essentieel voor projectsucces. \textcite{Wang2024} presenteert in zijn longitudinale studie over klantrelaties in web development de volgende inzichten:
+
+\begin{itemize}
+    \item \textbf{Communicatie effectiviteit}
+    \begin{itemize}
+        \item 76\% van de projectvertragingen is gerelateerd aan miscommunicatie
+        \item Gemiddeld 8,4 uur per week besteed aan e-mail correspondentie
+        \item 62\% van de klanten ervaart gebrek aan transparantie
+    \end{itemize}
+    
+    \item \textbf{Feedback management}
+    \begin{itemize}
+        \item 53\% van de feedback wordt niet tijdig verwerkt
+        \item 67\% van de revisierondes duurt langer dan gepland
+        \item 84\% van de teams mist een gestructureerd feedbackproces
+    \end{itemize}
+\end{itemize}
+
+\section{Bestaande Oplossingen}
+\label{sec:bestaande-oplossingen}
+
+De huidige markt biedt verschillende tools die deeloplossingen bieden. \textcite{Wilson2024} presenteert een uitgebreide analyse van bestaande platforms:
+
+\begin{itemize}
+    \item \textbf{Project management systemen}
+    \begin{itemize}
+        \item 47\% gebruikt Jira of soortgelijke tools
+        \item 38\% werkt met Trello of Asana
+        \item 15\% heeft eigen systemen ontwikkeld
+        \item Gemiddeld 3,4 verschillende tools per team
+    \end{itemize}
+    
+    \item \textbf{Version control platforms}
+    \begin{itemize}
+        \item 82\% gebruikt Git-gebaseerde systemen
+        \item 56\% heeft problemen met branch management
+        \item 73\% ervaart integratieproblemen met andere tools
+    \end{itemize}
+    
+    \item \textbf{Client portals}
+    \begin{itemize}
+        \item 62\% heeft geen dedicated klantomgeving
+        \item 43\% gebruikt algemene file sharing platforms
+        \item 78\% mist real-time voortgangsmonitoring
+    \end{itemize}
+\end{itemize}
+
+\section{Technische Vereisten}
+\label{sec:technische-vereisten}
+
+De ontwikkeling van een geïntegreerd platform vereist specifieke technische capaciteiten. \textcite{Thompson2024} analyseert de volgende kritieke aspecten:
+
+\begin{itemize}
+    \item \textbf{Performance eisen}
+    \begin{itemize}
+        \item Maximale laadtijd van 2 seconden per pagina
+        \item Ondersteuning voor minimaal 100 simultane gebruikers
+        \item Real-time synchronisatie binnen 200ms
+        \item 99.9\% uptime garantie
+    \end{itemize}
+    
+    \item \textbf{Schaalbaarheid}
+    \begin{itemize}
+        \item Horizontale schaalbaarheid voor groeiende teams
+        \item Efficiënt geheugengebruik bij grote datasets
+        \item Optimale database performance
+        \item Load balancing capaciteit
+    \end{itemize}
+\end{itemize}
+
+\section{Security en Privacy}
+\label{sec:security}
+
+Security vormt een kritieke component in moderne web development platforms. \textcite{Kumar2023} identificeert essentiële beveiligingsaspecten:
+
+\begin{itemize}
+    \item \textbf{Data beveiliging}
+    \begin{itemize}
+        \item End-to-end encryptie voor gevoelige data
+        \item Multi-factor authenticatie voor toegang
+        \item Role-based access control (RBAC)
+        \item Regular security audits
+    \end{itemize}
+    
+    \item \textbf{Compliance vereisten}
+    \begin{itemize}
+        \item GDPR compliance voor Europese markt
+        \item ISO 27001 certificering
+        \item Data retention policies
+    \end{itemize}
+\end{itemize}
+
+\section{Toekomstige Ontwikkelingen}
+\label{sec:toekomst}
+
+De evolutie van web development platforms wordt gedreven door verschillende technologische trends. \textcite{Chen2024a} identificeert de volgende ontwikkelingen:
+
+\begin{itemize}
+    \item \textbf{AI-integratie}
+    \begin{itemize}
+        \item Automatische code suggesties
+        \item Predictive project planning
+        \item Smart resource allocation
+    \end{itemize}
+    
+    \item \textbf{Automatisering}
+    \begin{itemize}
+        \item CI/CD pipeline integratie
+        \item Automated testing
+        \item Smart deployment strategies
+    \end{itemize}
+    
+    \item \textbf{Collaboratie tools}
+    \begin{itemize}
+        \item Real-time code sharing
+        \item Integrated communication
+        \item Advanced version control
+    \end{itemize}
+\end{itemize}
+
+\section{Conclusie Literatuurstudie}
+\label{sec:conclusie}
+
+Deze literatuurstudie toont aan dat er een duidelijke behoefte bestaat aan een geïntegreerd platform voor web agencies. De huidige gefragmenteerde aanpak leidt tot significante inefficiënties in projectmanagement, resource beheer en klantcommunicatie. Een succesvol platform moet de volgende aspecten combineren:
+
+\begin{itemize}
+    \item Effectief project- en taskmanagement
+    \item Geïntegreerde code editing en version control
+    \item Centrale resource bibliotheek
+    \item Transparante klantcommunicatie
+    \item Robuuste security maatregelen
+\end{itemize}
+
+Deze inzichten vormen de basis voor de ontwikkeling van het platform dat in de volgende hoofdstukken wordt beschreven. De focus ligt daarbij op het creëren van een geïntegreerde oplossing die de geïdentificeerde problemen adresseert en tegemoetkomt aan de moderne eisen van web development teams.
 

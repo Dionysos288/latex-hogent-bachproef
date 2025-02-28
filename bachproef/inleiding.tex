@@ -2,49 +2,70 @@
 %% Inleiding
 %%=============================================================================
 
-\chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
+\chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}
 \label{ch:inleiding}
 
-De inleiding moet de lezer net genoeg informatie verschaffen om het onderwerp te begrijpen en in te zien waarom de onderzoeksvraag de moeite waard is om te onderzoeken. In de inleiding ga je literatuurverwijzingen beperken, zodat de tekst vlot leesbaar blijft. Je kan de inleiding verder onderverdelen in secties als dit de tekst verduidelijkt. Zaken die aan bod kunnen komen in de inleiding~\autocite{Pollefliet2011}:
+Web agencies worden geconfronteerd met steeds complexere uitdagingen in het beheren van hun projecten, resources en klantcommunicatie. Uit recent onderzoek van \textcite{Reid2014} blijkt dat de huidige gefragmenteerde aanpak, waarbij verschillende tools worden gebruikt voor verschillende aspecten van het werkproces, leidt tot significante inefficiënties en communicatieproblemen.
 
-\begin{itemize}
-  \item context, achtergrond
-  \item afbakenen van het onderwerp
-  \item verantwoording van het onderwerp, methodologie
-  \item probleemstelling
-  \item onderzoeksdoelstelling
-  \item onderzoeksvraag
-  \item \ldots
-\end{itemize}
-
-\section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}%
+\section{Probleemstelling}
 \label{sec:probleemstelling}
 
-Uit je probleemstelling moet duidelijk zijn dat je onderzoek een meerwaarde heeft voor een concrete doelgroep. De doelgroep moet goed gedefinieerd en afgelijnd zijn. Doelgroepen als ``bedrijven,'' ``KMO's'', systeembeheerders, enz.~zijn nog te vaag. Als je een lijstje kan maken van de personen/organisaties die een meerwaarde zullen vinden in deze bachelorproef (dit is eigenlijk je steekproefkader), dan is dat een indicatie dat de doelgroep goed gedefinieerd is. Dit kan een enkel bedrijf zijn of zelfs één persoon (je co-promotor/opdrachtgever).
+Moderne web agencies worstelen met drie kernproblemen in hun dagelijkse werking:
 
-\section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}%
+\begin{enumerate}
+    \item \textbf{Gefragmenteerde workflows}: Teams gebruiken gemiddeld 5-8 verschillende tools voor projectmanagement, communicatie en resourcebeheer \autocite{Alexander2019}. Deze fragmentatie leidt tot tijdverlies, miscommunicatie en verminderde productiviteit.
+    
+    \item \textbf{Inefficiënt resourcebeheer}: Het ontbreken van een gecentraliseerd systeem voor het beheren van code snippets, design assets en projectdocumentatie resulteert in dubbel werk en inconsistente outputs \autocite{Wilson2023}.
+    
+    \item \textbf{Beperkte klanttransparantie}: Bestaande oplossingen bieden onvoldoende mogelijkheden voor effectieve klantcommunicatie en projectvoortgang monitoring \autocite{Zhang2024}.
+\end{enumerate}
+
+\section{Onderzoeksvraag}
 \label{sec:onderzoeksvraag}
 
-Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
+De centrale onderzoeksvraag van deze bachelorproef luidt:
 
-\section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}%
+\begin{quote}
+    Hoe kan een geïntegreerd platform worden ontwikkeld dat de workflows van web agencies optimaliseert door project management, resource beheer en klantcommunicatie te combineren in één coherent systeem?
+\end{quote}
+
+Deze hoofdvraag wordt ondersteund door de volgende deelvragen:
+
+\begin{itemize}
+    \item Welke functionaliteiten zijn essentieel voor effectief projectmanagement in web agencies?
+    \item Hoe kan een resource library worden geïmplementeerd die code, design en documentatie effectief beheert?
+    \item Welke features zijn nodig voor optimale klantcommunicatie en projecttransparantie?
+    \item Hoe kunnen externe systemen (zoals Google Calendar) worden geïntegreerd voor maximale efficiency?
+\end{itemize}
+
+\section{Onderzoeksdoelstelling}
 \label{sec:onderzoeksdoelstelling}
 
-Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
+Het doel van dit onderzoek is het ontwikkelen van een geïntegreerd platform dat:
 
-\section{\IfLanguageName{dutch}{Opzet van deze bachelorproef}{Structure of this bachelor thesis}}%
-\label{sec:opzet-bachelorproef}
+\begin{itemize}
+    \item Project- en taakmanagement combineert met resource beheer
+    \item Een uitgebreide resource library biedt voor code, design en documentatie
+    \item Real-time collaboratie mogelijk maakt voor teamleden
+    \item Een transparant klantportaal biedt met fase-tracking en revisie mogelijkheden
+    \item Integreert met externe systemen zoals Google Calendar
+\end{itemize}
 
-% Het is gebruikelijk aan het einde van de inleiding een overzicht te
-% geven van de opbouw van de rest van de tekst. Deze sectie bevat al een aanzet
-% die je kan aanvullen/aanpassen in functie van je eigen tekst.
+\section{Opzet van deze bachelorproef}
+\label{sec:opzet}
 
-De rest van deze bachelorproef is als volgt opgebouwd:
+Deze bachelorproef is als volgt gestructureerd:
 
-In Hoofdstuk~\ref{ch:stand-van-zaken} wordt een overzicht gegeven van de stand van zaken binnen het onderzoeksdomein, op basis van een literatuurstudie.
+\begin{description}
+    \item[Stand van zaken] Analyseert de huidige tools en praktijken in web agencies, identificeert tekortkomingen en onderzoekt moderne oplossingsrichtingen.
+    
+    \item[Methodologie] Beschrijft de ontwikkelingsaanpak, gebruikte technologieën en evaluatiemethoden.
+    
+    \item[Implementatie] Presenteert de technische realisatie van het platform, inclusief architectuur en kernfunctionaliteiten.
+    
+    \item[Evaluatie] Bespreekt de resultaten van gebruikerstests en vergelijkt het platform met bestaande oplossingen.
+    
+    \item[Conclusie] Vat de belangrijkste bevindingen samen en doet aanbevelingen voor toekomstig onderzoek.
+\end{description}
 
-In Hoofdstuk~\ref{ch:methodologie} wordt de methodologie toegelicht en worden de gebruikte onderzoekstechnieken besproken om een antwoord te kunnen formuleren op de onderzoeksvragen.
-
-% TODO: Vul hier aan voor je eigen hoofstukken, één of twee zinnen per hoofdstuk
-
-In Hoofdstuk~\ref{ch:conclusie}, tenslotte, wordt de conclusie gegeven en een antwoord geformuleerd op de onderzoeksvragen. Daarbij wordt ook een aanzet gegeven voor toekomstig onderzoek binnen dit domein.
+Dit onderzoek draagt bij aan de ontwikkeling van efficiëntere werkprocessen binnen web agencies en biedt een basis voor verdere innovatie in geïntegreerde ontwikkelplatforms.
