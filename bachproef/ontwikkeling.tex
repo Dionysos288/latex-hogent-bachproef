@@ -1,9 +1,173 @@
 \chapter{Ontwikkeling en Implementatie}
 \label{ch:ontwikkeling}
 
-Dit hoofdstuk behandelt het ontwikkelingsproces van het platform, met focus op de implementatie van de kernfunctionaliteiten.
+Dit hoofdstuk behandelt het volledige ontwikkelingsproces van het platform, met een diepgaande focus op de implementatie van de kernfunctionaliteiten, de gebruikte technieken, de iteratieve aanpak en de uitdagingen die tijdens de ontwikkeling zijn overwonnen. Het doel is om een transparant en volledig beeld te geven van hoe het platform tot stand is gekomen, van eerste setup tot de uiteindelijke oplevering.
 
-\section{Core Functionaliteiten}
-\label{sec:core-functionaliteiten}
+\section{Projectopzet en Voorbereiding}
+\label{sec:projectopzet}
 
-details over de implementatie volgen in dit hoofdstuk...
+De ontwikkeling startte met het opzetten van een moderne ontwikkelomgeving. Er werd gekozen voor een standaard \textbf{Next.js} projectstructuur, waarbij frontend en backend code in één repository worden beheerd. De belangrijkste stappen in deze fase waren:
+\begin{itemize}
+    \item Initialisatie van een Next.js project met Typescript voor typeveiligheid en schaalbaarheid.
+    \item Integratie van Supabase als backend-as-a-service voor database, authenticatie en realtime functionaliteit.
+    \item Installatie en configuratie van Prisma als ORM voor het modelleren van de database en het uitvoeren van migraties.
+    \item Opzetten van een gestructureerde mappenstructuur voor componenten, pagina's, API-routes en util-functies.
+    \item Inrichten van ESLint en Prettier voor consistente codekwaliteit.
+    \item Gebruik van Git en GitHub voor versiebeheer en samenwerking.
+\end{itemize}
+
+\section{Iteratief Ontwikkelingsproces}
+\label{sec:iteratief-proces}
+
+De ontwikkeling verliep volgens een iteratief proces, waarbij telkens kleine deelmodules werden uitgewerkt, getest en bijgestuurd op basis van feedback. De belangrijkste iteraties waren:
+\begin{itemize}
+    \item MVP (Minimum Viable Product): Basisfunctionaliteiten zoals authenticatie, teambeheer, project- en takenbeheer.
+    \item Feature-uitbreidingen: Toevoegen van resource library, klantenzone, notificatiesysteem en integraties.
+    \item UX/UI-verbeteringen: Optimalisatie van de gebruikerservaring op basis van feedback van testgebruikers.
+    \item Performance en security: Verbeteren van laadtijden, beveiliging en schaalbaarheid.
+\end{itemize}
+
+\section{Implementatie van Kernfunctionaliteiten}
+\label{sec:implementatie-kern}
+
+\subsection{Authenticatie en Teambeheer}
+\begin{itemize}
+    \item Implementatie van gebruikersregistratie en login via Supabase Auth en Better Auth.
+    \item Gebruikers kunnen teams aanmaken, beheren en leden uitnodigen.
+    \item Uitnodigingen voor teams verlopen via een unieke invite-link die gedeeld kan worden met potentiële teamleden. Daarnaast is het mogelijk om uitnodigingen per e-mail te versturen.
+    \item Rolgebaseerde toegang: admins, medewerkers en klanten met verschillende rechten.
+    \item Toewijzing van projecten, taken en resources aan specifieke teams.
+\end{itemize}
+
+\subsection{Project- en Task Management}
+\begin{itemize}
+    \item CRUD-operaties voor projecten en taken via Next.js API-routes en Prisma.
+    \item Taken kunnen worden toegewezen aan teamleden, voorzien van deadlines en gekoppeld aan projectfases.
+    \item Drag-and-drop interface voor het plannen en herschikken van taken, gerealiseerd met @dnd-kit.
+    \item Inline editing van taakstatussen en bulkbewerking van meerdere taken tegelijk.
+    \item Templates voor veelvoorkomende taken en workflows.
+    \item Synchronisatie van deadlines met Google Calendar API.
+    \item Voor het ophalen en muteren van taken zijn custom React hooks ontwikkeld die volgens een local-first principe werken: wijzigingen worden eerst lokaal doorgevoerd voor directe feedback aan de gebruiker, en vervolgens asynchroon gesynchroniseerd met de server. Dit zorgt voor een zeer snelle gebruikerservaring.
+\end{itemize}
+
+\subsection{Resource Library}
+\begin{itemize}
+    \item Centrale opslagplaats per team voor code snippets, design assets en documenten.
+    \item Integratie van Monaco Editor voor het bewerken van codefragmenten met syntax highlighting.
+    \item Upload en beheer van design assets (afbeeldingen, Figma links, kleurenpaletten).
+    \item Voor het uploaden en optimaliseren van afbeeldingen wordt gebruik gemaakt van Cloudflare Images.
+    \item Voor projectdocumentatie is gekozen voor de \textbf{Slate} rich text editor, vanwege de flexibiliteit en uitbreidbaarheid.
+    \item Documenten kunnen als template worden opgeslagen voor hergebruik. Versiebeheer van documenten is geïmplementeerd door bij elke wijziging een nieuwe versie op te slaan in de database, zodat eerdere versies kunnen worden teruggezet indien nodig.
+    \item Multi-edit functionaliteit voor het snel aanpassen of verplaatsen van meerdere library items.
+\end{itemize}
+
+\subsection{Klantenzone}
+\begin{itemize}
+    \item Per team een afgeschermde klantenzone, waar klanten enkel hun eigen projecten en documenten kunnen zien.
+    \item Mogelijkheid voor klanten om feedback te geven, revisies aan te vragen en de voortgang te volgen.
+    \item Beheer van klanttoegang via rollen en toegangscontrole.
+\end{itemize}
+
+\subsection{Notificatiesysteem}
+\begin{itemize}
+    \item Realtime notificaties bij updates aan taken, projecten, opmerkingen en resource library.
+    \item In-app notificatiecentrum en optioneel e-mailnotificaties.
+    \item Instelbare voorkeuren per gebruiker voor het ontvangen van meldingen.
+    \item Gebruik van Supabase Realtime voor directe updates.
+\end{itemize}
+
+\subsection{Persoonlijke en Team Views}
+\begin{itemize}
+    \item Gebruikers kunnen persoonlijke views aanmaken voor hun eigen taken en prioriteiten.
+    \item Team views tonen het volledige overzicht van alle taken, projecten en resources binnen het team.
+    \item Filters en sorteeropties voor snelle toegang tot relevante informatie.
+\end{itemize}
+
+\subsection{Fasebeheer en Inline Editing}
+\begin{itemize}
+    \item Projecten kunnen worden opgedeeld in fases, die visueel worden weergegeven op het project board.
+    \item Inline editing van project- en taakstatussen direct vanuit het overzicht.
+    \item Bulkacties voor het snel aanpassen van meerdere items.
+\end{itemize}
+
+\section{Integratie van Externe Diensten}
+\label{sec:integraties}
+
+\begin{itemize}
+    \item Google Calendar API: Synchronisatie van deadlines en meetings met de persoonlijke agenda van gebruikers.
+    \item Figma API: Importeren van design assets en live previews in de resource library.
+    \item Cloudflare Images: Voor het uploaden, optimaliseren en serveren van afbeeldingen binnen het platform.
+    \item E-mail: Versturen van uitnodigingen, notificaties en updates.
+\end{itemize}
+
+\section{Testing en Debugging}
+\label{sec:testing-debugging}
+
+\begin{itemize}
+    \item Handmatige en geautomatiseerde tests van alle kernfunctionaliteiten.
+    \item Gebruik van Jest en React Testing Library voor unit- en integratietests.
+    \item Usability tests met eindgebruikers (collega-studenten, docenten, of mensen uit het werkveld).
+    \item Debugging met browser developer tools, logging en monitoring via Vercel Analytics of Sentry.
+    \item Security checks op authenticatie, toegangscontrole en dataopslag.
+    % Voor end-to-end testing en security audits zijn (nog) geen specifieke tools of processen ingezet.
+\end{itemize}
+
+\section{Uitdagingen en Oplossingen}
+\label{sec:uitdagingen}
+
+Tijdens de ontwikkeling zijn verschillende uitdagingen overwonnen, waaronder:
+\begin{itemize}
+    \item \textbf{Rechten en toegangscontrole}: Het correct afschermen van data tussen teams en klanten vergde een zorgvuldig opgezet autorisatiemodel.
+    \item \textbf{Realtime updates}: Het implementeren van realtime functionaliteit zonder performanceverlies.
+    \item \textbf{Bulkacties en inline editing}: Het efficiënt verwerken van bulk updates en het direct aanpassen van data in de UI.
+    \item \textbf{Integratie van meerdere externe APIs}: Het combineren van verschillende externe diensten op een consistente manier.
+    \item \textbf{Schaalbaarheid}: Zorgen dat het platform performant blijft bij groeiend gebruik.
+\end{itemize}
+
+\section{Refactoring en Optimalisatie}
+\label{sec:refactoring}
+
+Gedurende het project zijn verschillende refactorings doorgevoerd:
+\begin{itemize}
+    \item Herstructurering van componenten voor betere herbruikbaarheid.
+    \item Optimalisatie van database queries met Prisma voor snellere responstijden.
+    \item Gebruik van React.memo en useMemo voor performance optimalisatie in de frontend.
+    \item Verbetering van error handling en logging.
+\end{itemize}
+
+\section{Overzicht van de Workflow}
+\label{sec:workflow}
+
+Het ontwikkelproces werd gekenmerkt door een iteratieve aanpak, waarbij telkens werd teruggekoppeld naar de centrale requirements en praktijknoden. Door te werken in korte sprints en regelmatig feedback te verzamelen, kon het platform stapsgewijs worden opgebouwd en bijgestuurd waar nodig.
+
+\section{Voorbeeld codefragmenten}
+\label{sec:codefragmenten}
+
+Hieronder volgt een voorbeeld van een Next.js API route voor het aanmaken van een taak (zie methodologiehoofdstuk voor meer voorbeelden):
+
+\begin{listing}[H]
+\begin{minted}{typescript}
+// Voorbeeld: Next.js API route voor het aanmaken van een taak
+import { supabase } from '../../lib/supabaseClient';
+
+export default async function handler(req, res) {
+  if (req.method === 'POST') {
+    const { title, projectId, assignedTo, dueDate } = req.body;
+    const { data, error } = await supabase
+      .from('tasks')
+      .insert([{ title, project_id: projectId, assigned_to: assignedTo, due_date: dueDate }]);
+    if (error) return res.status(400).json({ error: error.message });
+    res.status(200).json({ task: data });
+  }
+}
+\end{minted}
+\caption{Voorbeeld van een API route voor het aanmaken van een taak}
+\end{listing}
+
+% Voeg gerust meer codevoorbeelden toe voor belangrijke onderdelen zoals authenticatie, resource upload, of integratie met externe APIs.
+
+\section{Samenvatting}
+\label{sec:samenvatting}
+
+De ontwikkeling van het platform verliep via een gestructureerd, iteratief proces met veel aandacht voor schaalbaarheid, gebruiksvriendelijkheid en veiligheid. Door moderne technologieën en best practices te combineren, is een solide basis gelegd voor een toekomstbestendig platform voor web agencies.
+

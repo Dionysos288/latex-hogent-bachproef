@@ -5,14 +5,62 @@
 \chapter{Conclusie}%
 \label{ch:conclusie}
 
-% TODO: Trek een duidelijke conclusie, in de vorm van een antwoord op de
-% onderzoeksvra(a)g(en). Wat was jouw bijdrage aan het onderzoeksdomein en
-% hoe biedt dit meerwaarde aan het vakgebied/doelgroep? 
-% Reflecteer kritisch over het resultaat. In Engelse teksten wordt deze sectie
-% ``Discussion'' genoemd. Had je deze uitkomst verwacht? Zijn er zaken die nog
-% niet duidelijk zijn?
-% Heeft het onderzoek geleid tot nieuwe vragen die uitnodigen tot verder 
-%onderzoek?
+Deze bachelorproef had als doel het ontwikkelen van een geïntegreerd platform dat de workflows van web agencies optimaliseert door projectmanagement, resourcebeheer en klantcommunicatie te combineren in één samenhangend systeem. In deze conclusie worden de belangrijkste bevindingen, de bijdrage aan het vakgebied, de relevantie voor de praktijk en de aanbevelingen voor toekomstig onderzoek samengevat.
 
-\lipsum[76-80]
+\section{Antwoord op de Onderzoeksvraag}
+
+De centrale onderzoeksvraag luidde: \emph{Hoe kan een geïntegreerd platform worden ontwikkeld dat de workflows van web agencies optimaliseert door project management, resource beheer en klantcommunicatie te combineren in één samenhangend systeem?}
+
+Uit de literatuurstudie (\autoref{ch:stand-van-zaken}) bleek dat web agencies in de praktijk geconfronteerd worden met gefragmenteerde workflows, inefficiënt resourcebeheer en beperkte klanttransparantie. Bestaande oplossingen zoals Jira, Trello, Figma en Notion bieden elk slechts een deel van de benodigde functionaliteit en vereisen vaak het schakelen tussen verschillende tools, wat leidt tot tijdsverlies en miscommunicatie.
+
+Het ontwikkelde platform biedt een antwoord op deze problemen door:
+\begin{itemize}
+    \item \textbf{Centrale toegang} tot projectmanagement, resource library en klantenzone binnen één applicatie.
+    \item \textbf{Local-first synchronisatie} en custom hooks, waardoor gebruikers direct feedback krijgen en sneller kunnen werken.
+    \item \textbf{Uitgebreide resource library} met ondersteuning voor code (Monaco Editor), design assets (Figma-integratie, Cloudflare Images) en documenten (Slate rich text editor met versiebeheer).
+    \item \textbf{Team- en klantenzones} die privacy en overzicht waarborgen.
+    \item \textbf{Realtime notificaties} via Supabase Realtime, zodat gebruikers altijd op de hoogte zijn van relevante wijzigingen.
+    \item \textbf{Naadloze integraties} met Google Calendar, Figma en Cloudflare Images.
+    \item \textbf{Bulkacties, inline editing en templates} voor efficiënt beheer van taken en resources.
+\end{itemize}
+
+\section{Bijdrage aan het Onderzoeksdomein en het Werkveld}
+
+Deze bachelorproef levert een concrete bijdrage aan het onderzoeksdomein van digitale workflow-optimalisatie voor web agencies. Door de combinatie van literatuurstudie, analyse van bestaande oplossingen en de ontwikkeling van een proof-of-concept, wordt aangetoond dat een geïntegreerd platform daadwerkelijk kan leiden tot efficiëntere werkprocessen, betere samenwerking en verhoogde klanttevredenheid.
+
+Voor het werkveld biedt het platform een schaalbare en toekomstbestendige oplossing die inspeelt op de actuele noden van web agencies:
+\begin{itemize}
+    \item Minder tijdverlies door het elimineren van context-switching tussen tools.
+    \item Betere samenwerking door centrale opslag en versiebeheer van alle projectresources.
+    \item Meer transparantie en betrokkenheid van klanten via een afgeschermde klantenzone.
+    \item Snellere onboarding van nieuwe teamleden dankzij templates en duidelijke workflowstructuren.
+\end{itemize}
+
+\section{Kritische Reflectie op het Resultaat}
+
+Hoewel het platform in hoge mate voldoet aan de vooraf opgestelde requirements, zijn er ook enkele beperkingen en aandachtspunten:
+\begin{itemize}
+    \item De evaluatie is voornamelijk gebaseerd op kwalitatieve feedback van een beperkte groep gebruikers. Grootschalige, kwantitatieve studies zijn nodig om de impact op productiviteit en klanttevredenheid objectief te meten.
+    \item Er zijn nog geen geautomatiseerde end-to-end tests of security audits uitgevoerd. Voor productiegebruik is verdere validatie noodzakelijk.
+    \item Integraties met andere populaire tools zoals Slack, Jira of cloud storage zijn nog niet geïmplementeerd, maar worden door gebruikers wel gevraagd.
+    \item AI-ondersteunde features, zoals slimme taakverdeling of automatische resource tagging, zijn nog niet aanwezig maar vormen een interessante piste voor toekomstig onderzoek.
+\end{itemize}
+
+\section{Aanbevelingen en Toekomstperspectief}
+
+Op basis van de analyse en de ontvangen feedback worden de volgende aanbevelingen gedaan:
+\begin{itemize}
+    \item \textbf{Uitbreiden van integraties} met andere tools om het platform nog waardevoller te maken voor verschillende soorten web agencies.
+    \item \textbf{Implementeren van AI-functionaliteit} voor automatisering, slimme suggesties en verdere workflow-optimalisatie.
+    \item \textbf{Opzetten van een geautomatiseerd test- en auditproces} om de betrouwbaarheid en veiligheid van het platform te waarborgen.
+    \item \textbf{Uitvoeren van grootschalige gebruikersstudies} om de effectiviteit van het platform in diverse praktijkomgevingen te valideren.
+    \item \textbf{Optimaliseren voor mobiele apparaten} zodat gebruikers altijd en overal toegang hebben tot hun projecten en resources.
+\end{itemize}
+
+\section{Reflectie en Slotbeschouwing}
+
+De uitkomst van deze bachelorproef bevestigt de hypothese dat een geïntegreerd platform een significante meerwaarde kan bieden voor web agencies. De combinatie van projectmanagement, resourcebeheer en klantcommunicatie in één systeem resulteert in efficiëntere processen, betere samenwerking en meer tevreden klanten. De gekozen technologieën (Next.js, Supabase, Prisma, React, Monaco Editor, Slate, Cloudflare Images) en de modulaire architectuur zorgen ervoor dat het platform eenvoudig kan worden uitgebreid en aangepast aan toekomstige noden.
+
+Hoewel het project nog ruimte voor groei en optimalisatie biedt, vormt het een solide basis voor verdere innovatie in het domein van digitale samenwerkingstools voor web agencies. De bachelorproef levert niet alleen een werkend proof-of-concept op, maar ook een blauwdruk voor hoe moderne web agencies hun workflows kunnen stroomlijnen en hun concurrentiepositie kunnen versterken.
+
 

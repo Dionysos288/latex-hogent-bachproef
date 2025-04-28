@@ -5,93 +5,113 @@
 \chapter{\IfLanguageName{dutch}{Methodologie}{Methodology}}
 \label{ch:methodologie}
 
-Dit hoofdstuk beschrijft de methodologische aanpak die is gebruikt voor het onderzoek en de ontwikkeling van het samenhangend platform. Het onderzoek is uitgevoerd in verschillende fasen, elk met specifieke doelstellingen en methoden.
+Dit hoofdstuk biedt een diepgaand inzicht in de verschillende fases voor het uitwerken van het proof-of-concept van deze bachelorproef, alsook de aanpak en methodes die hiervoor zijn gevolgd. De methodologie vormt de basis van het onderzoek en biedt een gestructureerd beeld voor het analyseren, ontwerpen, implementeren en evalueren van de voorgestelde oplossing. Ook wordt de redenering achter de gekozen tools en platformen toegelicht. Een visueel overzicht van de stappen is terug te vinden in Figuur~\ref{fig:methodologie-flowchart}.
 
-\section{Onderzoeksfasen}
-\label{sec:onderzoeksfasen}
+\begin{figure}[h]
+    \centering
+    %\includegraphics[width=0.8\textwidth]{methodologie-flowchart.png}
+    \caption{Visuele voorstelling van de methodologie}
+    \label{fig:methodologie-flowchart}
+\end{figure}
 
-Het onderzoek is opgedeeld in vijf hoofdfasen:
+\section{Literatuurstudie}
+In de eerste fase lag de focus op het verzamelen van relevante informatie over projectmanagement, resource libraries en workflow optimalisatie binnen web agencies. Hiervoor zijn recente rapporten, open-access papers en praktijkvoorbeelden geanalyseerd. De inzichten uit deze literatuurstudie vormden de basis voor het bepalen van de functionele vereisten en het afbakenen van de scope van het platform.
 
-\begin{enumerate}
-    \item Literatuuronderzoek en requirements analyse
-    \item Design en architectuur planning
-    \item Ontwikkeling en implementatie
-    \item Testing en evaluatie
-    \item Analyse en conclusievorming
-\end{enumerate}
-
-\section{Fase 1: Literatuuronderzoek en Requirements}
-\label{sec:fase1}
-
-De eerste fase bestond uit een uitgebreid literatuuronderzoek naar bestaande oplossingen en best practices. Hierbij zijn verschillende onderzoeksmethoden toegepast:
-
+\section{Opstellen van het Proof-of-Concept}
+Deze fase vormde het startpunt van het praktijkgedeelte. Het doel was om een gestructureerd en gedetailleerd plan van aanpak op te stellen. Dit omvatte:
 \begin{itemize}
-    \item Analyse van academische literatuur
-    \item Analyse van bestaande platforms en hun beperkingen
-    \item Interviews met potentiële eindgebruikers voor requirements gathering
+    \item Het afbakenen van de scope van het platform (project- en task management, resource library voor code, design en documenten, klantenzone)
+    \item Het identificeren van de functionele en niet-functionele vereisten
+    \item Het kiezen van de tools en technologieën voor de implementatie
 \end{itemize}
 
-Deze fase resulteerde in een gedetailleerd benodigdheden document en een duidelijk beeld van de huidige stand van zaken in het vakgebied.
+\subsection{Uitleg en verantwoording voor de gebruikte tools}
+\textbf{Next.js} werd gekozen als basis voor de frontend en backend van het platform vanwege de flexibiliteit, de ondersteuning voor server-side rendering en de sterke integratie met moderne webstandaarden. \\
+\textbf{Prisma} werd gebruikt voor het opzetten van het datamodel en de database interactie, omdat het een duidelijke en type-veilige manier biedt om data te beheren. \\
+\textbf{React} (binnen Next.js) werd gebruikt voor het bouwen van de gebruikersinterface, vanwege de component-gebaseerde aanpak en de grote community. \\
+\textbf{Monaco Editor} werd geïntegreerd als code editor in de resource library, zodat gebruikers code snippets kunnen opslaan en bewerken in een vertrouwde omgeving. \\
+\textbf{Google Calendar API} werd gebruikt om persoonlijke en projecttaken te synchroniseren met de agenda van de gebruiker. \\
+\textbf{Figma} werd gebruikt voor het ontwerpen van de UI/UX en het beheren van design assets. \\
+\textbf{Supabase} werd gebruikt als database- en authenticatieoplossing vanwege de eenvoudige integratie met Next.js, realtime functionaliteit en makkelijke setup. \\
+\textbf{Better Auth} werd gebruikt voor veilige gebruikersauthenticatie, zodat gebruikers eenvoudig en veilig kunnen inloggen.
 
-\section{Fase 2: Design en Architectuur}
-\label{sec:fase2}
+\section{Ontwerp en implementatie}
+Na het opstellen van de requirements werd gestart met het ontwerpen van de architectuur en de gebruikersinterface. Dit gebeurde in nauwe samenwerking met de co-promotor, waarbij wireframes en prototypes werden besproken en bijgestuurd op basis van feedback.
 
-De tweede fase focuste op het ontwerp van de technische architectuur en gebruikersinterface:
+\subsection{Opzetten van de basisstructuur}
+De eerste stap was het opzetten van een Next.js project met Typescript, waarbij direct Supabase werd geïntegreerd voor database en authenticatie. Prisma werd gebruikt voor het modelleren van de database, met tabellen voor gebruikers, teams, projecten, taken, documenten, code snippets en design assets.
 
+\subsection{Teamstructuur en authenticatie}
+Gebruikers kunnen teams aanmaken of lid worden van een team. Elk team heeft een eigen projectomgeving, resource library en klantenzone. Authenticatie en autorisatie worden geregeld via Supabase en Better Auth, waarbij gebruikers verschillende rollen kunnen hebben (admin, medewerker, klant). Toegang tot projecten, taken en resources is afhankelijk van het team en de rol van de gebruiker.
+
+\subsection{Project- en task management module}
+Gebruikers kunnen projecten aanmaken binnen hun team. Elk project bevat taken, die toegewezen kunnen worden aan teamleden. Taken kunnen worden voorzien van deadlines, gekoppeld aan Google Calendar, en onderverdeeld in fases. De status van taken en projecten is direct aanpasbaar vanaf de hoofdpagina, en er is ondersteuning voor multi-edit van taken. Er zijn ook templates voor taken, zodat veelvoorkomende workflows snel kunnen worden opgezet.
+
+\subsection{Persoonlijke en team views}
+Gebruikers kunnen persoonlijke views maken waarin ze hun eigen taken en prioriteiten zien, los van het teamoverzicht. Daarnaast zijn er team views waarin alle taken, projecten en resources van het team zichtbaar zijn. Dit maakt het mogelijk om snel te schakelen tussen individueel werk en teamdoelen.
+
+\subsection{Resource library voor code, design en documenten}
+De resource library is per team opgezet en bevat:
 \begin{itemize}
-    \item Ontwikkeling van technische architectuur gebaseerd op Next.js
-    \item Design van database schema's met Prisma
-    \item Opstellen van UI/UX wireframes en prototypes
-    \item Planning van integraties met externe systemen
+    \item \textbf{Code snippets}: Opslaan, bewerken en categoriseren van herbruikbare code. Met Monaco Editor voor live editing.
+    \item \textbf{Design assets}: Uploaden en beheren van afbeeldingen, kleurenpaletten, Figma links en andere visuele elementen.
+    \item \textbf{Documenten}: Aanmaken en bewerken van projectdocumentatie met een rich text editor. Documenten kunnen als template worden opgeslagen voor hergebruik.
+    \item \textbf{Multi-edit}: Meerdere library items kunnen tegelijk worden aangepast of verplaatst.
 \end{itemize}
 
-Hierbij is gebruik gemaakt van moderne design methodologieën zoals een feedback sessie met de co promotor.
+\subsection{Klantenzone}
+Per team kan een klantenzone worden toegevoegd. Klanten krijgen toegang tot hun eigen omgeving waar ze de voortgang van projecten kunnen volgen, documenten kunnen inzien en revisies kunnen aanvragen. De klantenzone is volledig afgeschermd van interne teaminformatie.
 
-\section{Fase 3: Ontwikkeling}
-\label{sec:fase3}
+\subsection{Notificatiesysteem}
+Het platform bevat een uitgebreid notificatiesysteem. Gebruikers ontvangen meldingen bij updates aan taken, nieuwe toewijzingen, statuswijzigingen, opmerkingen op taken of documenten, en belangrijke projectgebeurtenissen. Notificaties zijn zichtbaar in de webapp en kunnen optioneel via e-mail worden verstuurd.
 
-De ontwikkelingsfase volgde een aanpak met een zoveel mogelijk doen op het moment dat de code geschreven wordt:
+\subsection{Fasebeheer en inline editing}
+Projecten kunnen worden opgedeeld in fases, die eenvoudig te beheren zijn. De status van projecten, taken en resources kan direct vanaf de hoofdpagina worden aangepast via inline editing. Dit versnelt het updaten van informatie en maakt het platform gebruiksvriendelijk.
 
+\subsection{Voorbeeld code snippets}
+Hier kan je belangrijke codevoorbeelden toevoegen, bijvoorbeeld:
+\begin{listing}[H]
+\begin{minted}{typescript}
+// Voorbeeld: Next.js API route voor het aanmaken van een taak
+import { supabase } from '../../lib/supabaseClient';
+
+export default async function handler(req, res) {
+  if (req.method === 'POST') {
+    const { title, projectId, assignedTo, dueDate } = req.body;
+    const { data, error } = await supabase
+      .from('tasks')
+      .insert([{ title, project_id: projectId, assigned_to: assignedTo, due_date: dueDate }]);
+    if (error) return res.status(400).json({ error: error.message });
+    res.status(200).json({ task: data });
+  }
+}
+\end{minted}
+\caption{Voorbeeld van een API route voor het aanmaken van een taak}
+\end{listing}
+
+% Voeg gerust meer codevoorbeelden toe voor belangrijke onderdelen zoals authenticatie, resource upload, of integratie met externe APIs.
+
+\section{Testen en evaluatie}
+Na de implementatie volgde een uitgebreide testfase. Hierbij werd gebruik gemaakt van:
 \begin{itemize}
-    \item Implementatie van core functionaliteiten:
-    \begin{itemize}
-        \item Project en task management systeem
-        \item Resource library met code editor
-        \item Klantportaal met fase-tracking
-        \item Calendar integratie
-    \end{itemize}
+    \item Functionele tests van alle modules (handmatig en geautomatiseerd)
+    \item Usability tests met eindgebruikers (collega-studenten, docenten, of mensen uit het werkveld)
+    \item Feedbacksessies met de co-promotor en andere betrokkenen
+    \item Controle op security en privacy (authenticatie, toegangsbeheer, dataopslag)
 \end{itemize}
 
-\section{Fase 4: Testing en Evaluatie}
-\label{sec:fase4}
+De verzamelde feedback werd gebruikt om het platform verder te verbeteren en bugs of onduidelijkheden op te lossen.
 
-De evaluatiefase bestond uit verschillende testmethodologieën:
+\section{Analyse en reflectie}
+In de laatste fase werden de resultaten van de tests en feedbacksessies geanalyseerd. Er werd gekeken in hoeverre het platform voldoet aan de vooraf opgestelde requirements en waar nog ruimte is voor verbetering. Ook werd gereflecteerd op de gekozen aanpak, de gebruikte tools en de algemene workflow. Op basis hiervan zijn aanbevelingen geformuleerd voor toekomstige uitbreidingen of optimalisaties.
 
-\begin{itemize}
-    \item Functionele tests van alle componenten
-    \item Usability testing met eindgebruikers
-    \item Security audits van het platform
-\end{itemize}
+\section{Overzicht van de workflow}
+De gekozen methodologie heeft gezorgd voor een gestructureerde en iteratieve aanpak, waarbij telkens werd teruggekoppeld naar de centrale onderzoeksvraag en de praktijknoden van web agencies. Door te werken in duidelijke fasen en regelmatig feedback te verzamelen, kon het platform stapsgewijs worden opgebouwd en bijgestuurd waar nodig.
 
-Feedback werd verzameld via:
-\begin{itemize}
-    \item gebruikersinterviews
-    \item Performance metrics analyse
-    \item feedback sessie met de co promotor
-\end{itemize}
-
-\section{Fase 5: Analyse en Conclusie}
-\label{sec:fase5}
-
-De laatste fase focuste op het analyseren van de verzamelde data en het trekken van conclusies:
-
-\begin{itemize}
-    \item Analyse van gebruikersfeedback en testresultaten
-    \item Vergelijking met initiële requirements
-    \item Identificatie van verbeterpunten en aanbevelingen
-    \item Documentatie van bevindingen en conclusies
-\end{itemize}
-
-Deze methodologische aanpak heeft geleid tot een systematische ontwikkeling en evaluatie van het platform, waarbij elke fase heeft bijgedragen aan het beantwoorden van de onderzoeksvragen. De gedetailleerde resultaten van elke fase worden in de volgende hoofdstukken besproken.
+% Vragen voor jou:
+% - Heb je Supabase of een andere database gebruikt?
+% - Heb je usability tests gedaan met echte gebruikers, of enkel met studenten/docenten?
+% - Heb je security/privacy expliciet getest, of enkel basis authenticatie?
+% - Wil je nog een flowchart toevoegen? (Zo ja, lever gerust een afbeelding aan.)
 
 

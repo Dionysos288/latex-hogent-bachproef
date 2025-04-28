@@ -1,9 +1,206 @@
 \chapter{Design en Architectuur}
 \label{ch:design}
 
-Dit hoofdstuk beschrijft in detail de design- en architectuurfase van het platform, inclusief de technische keuzes en ontwerpbeslissingen.
+Dit hoofdstuk beschrijft in detail de design- en architectuurfase van het platform, inclusief de technische keuzes, ontwerpbeslissingen en de onderliggende motieven. Het doel is om een helder en volledig beeld te geven van hoe het platform is opgebouwd, waarom bepaalde keuzes zijn gemaakt, en hoe de verschillende componenten samenwerken.
 
 \section{Technische Architectuur}
 \label{sec:tech-architectuur}
 
-details over de implementatie volgen in dit hoofdstuk...
+Het platform is opgezet als een moderne webapplicatie, waarbij gebruik is gemaakt van een fullstack benadering met Next.js als kern. De architectuur is modulair en schaalbaar opgezet, zodat toekomstige uitbreidingen eenvoudig kunnen worden doorgevoerd.
+
+\subsection{Overzicht van de architectuur}
+De applicatie bestaat uit de volgende hoofdcomponenten:
+\begin{itemize}
+    \item \textbf{Frontend}: Gebouwd met Next.js en React, met ondersteuning voor server-side rendering (SSR) en statische generatie (SSG) waar mogelijk.
+    \item \textbf{Backend}: API-routes in Next.js, die communiceren met Supabase en Prisma voor dataopslag en authenticatie.
+    \item \textbf{Database}: Supabase (PostgreSQL) als primaire database, beheerd via Prisma ORM.
+    \item \textbf{Authenticatie}: Supabase Auth en Better Auth voor gebruikersbeheer, teambeheer en toegangscontrole.
+    \item \textbf{Externe integraties}: Google Calendar API voor synchronisatie van taken, Figma API voor design assets, en e-mailnotificaties.
+    \item \textbf{Realtime functionaliteit}: Supabase Realtime voor live updates van taken, notificaties en resource library.
+\end{itemize}
+
+\subsection{Architectuurdiagram}
+\begin{figure}[h]
+    \centering
+    %\includegraphics[width=0.9\textwidth]{architectuur-overzicht.png}
+    \caption{Globaal overzicht van de architectuur van het platform}
+    \label{fig:architectuur-overzicht}
+\end{figure}
+
+\section{Frontend Architectuur}
+\label{sec:frontend-architectuur}
+
+De frontend is opgebouwd met Next.js (App Router) en React. Er is gekozen voor een component-gebaseerde structuur, waarbij herbruikbaarheid en onderhoudbaarheid centraal staan.
+
+\subsection{Structuur en routing}
+\begin{itemize}
+    \item \textbf{App Router}: Alle routes zijn opgezet via de Next.js App Router, wat zorgt voor duidelijke scheiding tussen publieke, team- en klantenzones.
+    \item \textbf{Layout}: Gebruik van shared layouts voor consistente navigatie, theming en toegangscontrole.
+    \item \textbf{Code splitting}: Dynamische imports en React.lazy voor het optimaliseren van de laadtijd.
+    \item \textbf{State management}: Gebruik van React Context en (optioneel) Zustand of Redux voor globale state, zoals gebruikersdata, notificaties en teamselectie.
+    \item \textbf{Theming}: Implementatie van een dark/light theme via CSS-variabelen en context.
+\end{itemize}
+
+\subsection{Belangrijke UI-componenten}
+\begin{itemize}
+    \item \textbf{Dashboard}: Overzicht van projecten, taken, notificaties en teamactiviteiten.
+    \item \textbf{Project board}: Kanban-achtige weergave van taken per projectfase, met drag-and-drop via @dnd-kit.
+    \item \textbf{Resource library}: Tab-based interface voor code, design en documenten, met Monaco Editor en rich text editor.
+    \item \textbf{Klantenzone}: Afgeschermde omgeving voor klanten, met beperkte toegang tot relevante projecten en documenten.
+    \item \textbf{Notificatiecentrum}: Live updates van taken, opmerkingen en statuswijzigingen.
+    \item \textbf{Instellingen}: Beheer van teams, gebruikers, rollen en integraties.
+\end{itemize}
+
+\subsection{Toegankelijkheid en UX}
+\begin{itemize}
+    \item \textbf{Responsief ontwerp}: Volledige ondersteuning voor desktop, tablet en mobiel.
+    \item \textbf{Toegankelijkheid}: Gebruik van ARIA-labels, toetsenbordnavigatie en kleurcontrasten.
+    \item \textbf{Performance}: Lazy loading, debouncing en optimalisatie van zware componenten zoals de Monaco Editor.
+\end{itemize}
+
+\section{Backend Architectuur}
+\label{sec:backend-architectuur}
+
+De backend bestaat uit Next.js API-routes, die als serverless functies draaien. Deze routes verzorgen de communicatie met Supabase, Prisma en externe APIs.
+
+\subsection{API-structuur}
+\begin{itemize}
+    \item \textbf{RESTful endpoints}: Voor CRUD-operaties op projecten, taken, teams, resources en notificaties.
+    \item \textbf{Authenticatie middleware}: Controleert JWT-tokens van Supabase/Better Auth en bepaalt toegang op basis van rol en team.
+    \item \textbf{Error handling}: Gebruik van error boundaries en centrale error handlers voor consistente foutafhandeling.
+    \item \textbf{Rate limiting}: Bescherming tegen misbruik van API-routes.
+\end{itemize}
+
+\subsection{Databaseontwerp}
+\begin{itemize}
+    \item \textbf{Relaties}: Tabellen voor gebruikers, teams, projecten, taken, resources, notificaties, rollen en klantenzones.
+    \item \textbf{Prisma schema}: Gebruik van Prisma Migrate voor versiebeheer van het datamodel.
+    \item \textbf{Connection pooling}: Geconfigureerd voor productieomgevingen via Supabase.
+    \item \textbf{Transacties}: Voor kritieke operaties zoals bulk edits en statuswijzigingen.
+\end{itemize}
+
+\subsection{Realtime functionaliteit}
+\begin{itemize}
+    \item \textbf{Supabase Realtime}: Live updates voor taken, notificaties en resource library.
+    \item \textbf{Websockets}: Voor directe communicatie tussen frontend en backend bij kritieke updates.
+\end{itemize}
+
+\section{Authenticatie, Autorisatie en Teambeheer}
+\label{sec:auth-teams}
+
+\subsection{Authenticatie}
+\begin{itemize}
+    \item \textbf{Supabase Auth}: Voor standaard gebruikersauthenticatie (e-mail, wachtwoord, magic links).
+    \item \textbf{Better Auth}: Voor geavanceerde authenticatie, zoals OAuth, 2FA en single sign-on.
+\end{itemize}
+
+\subsection{Teambeheer en toegangscontrole}
+\begin{itemize}
+    \item Gebruikers kunnen teams aanmaken, uitnodigen en beheren.
+    \item Elk team heeft eigen projecten, resource library en klantenzone.
+    \item Rollen bepalen de toegangsrechten (admin, medewerker, klant).
+    \item Toegangscontrole op API-niveau en in de frontend.
+\end{itemize}
+
+\subsection{Klantenzone}
+\begin{itemize}
+    \item Per team kan een klantenzone worden geactiveerd.
+    \item Klanten zien enkel hun eigen projecten, documenten en voortgang.
+    \item Mogelijkheid tot aanvragen van revisies en feedback.
+\end{itemize}
+
+\section{Notificatiesysteem}
+\label{sec:notificaties}
+
+Het notificatiesysteem is ontworpen om gebruikers continu op de hoogte te houden van relevante gebeurtenissen.
+
+\begin{itemize}
+    \item \textbf{Triggers}: Nieuwe taken, statuswijzigingen, opmerkingen, resource updates, teamactiviteiten.
+    \item \textbf{Kanalen}: In-app notificaties, optioneel e-mail.
+    \item \textbf{Realtime}: Directe updates via Supabase Realtime.
+    \item \textbf{Instelbaarheid}: Gebruikers kunnen voorkeuren instellen voor welke meldingen ze willen ontvangen.
+\end{itemize}
+
+\section{Project- en Task Management}
+\label{sec:project-task}
+
+\begin{itemize}
+    \item \textbf{Projectfases}: Elk project kan worden opgedeeld in fases, die visueel worden weergegeven.
+    \item \textbf{Taken}: Taken kunnen worden toegewezen, voorzien van deadlines, gekoppeld aan Google Calendar, en in bulk worden aangepast.
+    \item \textbf{Templates}: Voor veelvoorkomende taken en documenten kunnen templates worden aangemaakt en hergebruikt.
+    \item \textbf{Views}: Zowel persoonlijke als team views voor het filteren en prioriteren van taken.
+    \item \textbf{Inline editing}: Status en details van taken kunnen direct vanuit het overzicht worden aangepast.
+\end{itemize}
+
+\section{Resource Library}
+\label{sec:resource-library}
+
+\begin{itemize}
+    \item \textbf{Code snippets}: Monaco Editor voor bewerken, syntax highlighting en categorisatie.
+    \item \textbf{Design assets}: Integratie met Figma, upload van afbeeldingen, beheer van kleurenpaletten.
+    \item \textbf{Documenten}: Rich text editor, versiebeheer, templates.
+    \item \textbf{Bulk acties}: Multi-edit en verplaatsing van meerdere items tegelijk.
+    \item \textbf{Toegangscontrole}: Enkel teamleden met de juiste rechten kunnen resources aanpassen.
+\end{itemize}
+
+\section{Integraties met Externe Diensten}
+\label{sec:integraties}
+
+\begin{itemize}
+    \item \textbf{Google Calendar API}: Synchronisatie van deadlines en meetings.
+    \item \textbf{Figma API}: Importeren van design assets en live previews.
+    \item \textbf{E-mail}: Versturen van notificaties en uitnodigingen.
+   
+\end{itemize}
+
+\section{Beveiliging en Privacy}
+\label{sec:security}
+
+\begin{itemize}
+    \item \textbf{Authenticatie en autorisatie}: JWT-tokens, rolgebaseerde toegang, 2FA.
+    \item \textbf{Data encryptie}: Gevoelige data wordt versleuteld opgeslagen.
+    \item \textbf{GDPR}: Dataopslag en verwerking conform GDPR-richtlijnen.
+    \item \textbf{Input validatie}: Zowel client- als server-side.
+    \item \textbf{Logging en monitoring}: Voor detectie van verdachte activiteiten.
+   
+\end{itemize}
+
+\section{Schaalbaarheid en Performantie}
+\label{sec:schaalbaarheid}
+
+\begin{itemize}
+    \item \textbf{Serverless deployment}: Next.js API-routes draaien als serverless functies.
+    \item \textbf{Connection pooling}: Voor efficiënte databaseconnecties.
+    \item \textbf{Caching}: Gebruik van ISR (Incremental Static Regeneration) en client-side caching.
+    \item \textbf{Code splitting en lazy loading}: Voor snelle laadtijden.
+    \item \textbf{Monitoring}: Integratie met tools zoals Vercel Analytics of Sentry.
+\end{itemize}
+
+\section{Designbeslissingen en Overwegingen}
+\label{sec:design-keuzes}
+
+\begin{itemize}
+    \item \textbf{Modulariteit}: Componenten en modules zijn los van elkaar te ontwikkelen en te testen.
+    \item \textbf{Herbruikbaarheid}: Templates, componenten en logica zijn generiek opgezet.
+    \item \textbf{Iteratief ontwerp}: Regelmatige feedbackrondes en bijsturing op basis van gebruikerservaring.
+    \item \textbf{Toekomstbestendigheid}: Architectuur is voorbereid op toekomstige uitbreidingen (bv. mobiele app, extra integraties).
+\end{itemize}
+
+\section{Voorbeeld code en diagrammen}
+\label{sec:code-diagrammen}
+
+\begin{itemize}
+    \item \textbf{Voorbeeld Next.js API route}: Zie methodologiehoofdstuk.
+    \item \textbf{Diagrammen}: Zie figuren in dit hoofdstuk voor architectuuroverzicht en datamodellen.
+\end{itemize}
+
+\section{Samenvatting}
+\label{sec:samenvatting}
+
+De gekozen design en architectuur zorgen voor een schaalbaar, veilig en gebruiksvriendelijk platform dat eenvoudig kan worden uitgebreid. Door te kiezen voor moderne technologieën en een modulaire opzet, is het platform voorbereid op de noden van web agencies en hun klanten.
+
+% Vragen voor jou:
+% - Zijn er nog andere externe integraties gebruikt (bv. Slack, Jira, ...)? 
+% - Zijn er specifieke security audits of pentests uitgevoerd?
+% - Wil je extra diagrammen of codevoorbeelden toevoegen? (Lever gerust aan!)
+% - Zijn er specifieke design patterns of architecturale principes die je extra wil toelichten?
