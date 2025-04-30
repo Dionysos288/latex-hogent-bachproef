@@ -15,12 +15,12 @@ Dit hoofdstuk biedt een diepgaand inzicht in de verschillende fases voor het uit
 \end{figure}
 
 \section{Literatuurstudie}
-In de eerste fase lag de focus op het verzamelen van relevante informatie over projectmanagement, resource libraries en workflow optimalisatie binnen web agencies. Hiervoor zijn recente rapporten, open-access papers en praktijkvoorbeelden geanalyseerd. De inzichten uit deze literatuurstudie vormden de basis voor het bepalen van de functionele vereisten en het afbakenen van de scope van het platform.
+In de eerste fase lag de focus op het verzamelen van relevante informatie over projectmanagement, resource libraries en workflow optimalisatie binnen web agencies. Hiervoor zijn recente rapporten, open-access papers en praktijkvoorbeelden geanalyseerd. De inzichten uit deze literatuurstudie vormden de basis voor het bepalen van de functionele vereisten en het vastzetten van wat er gebeurd gaar worden op het platform.
 
 \section{Opstellen van het Proof-of-Concept}
 Deze fase vormde het startpunt van het praktijkgedeelte. Het doel was om een gestructureerd en gedetailleerd plan van aanpak op te stellen. Dit omvatte:
 \begin{itemize}
-    \item Het afbakenen van de scope van het platform (project- en task management, resource library voor code, design en documenten, klantenzone)
+    \item Het vastzetten van de scope van het platform (project- en task management, resource library voor code, design en documenten, klantenzone)
     \item Het identificeren van de functionele en niet-functionele vereisten
     \item Het kiezen van de tools en technologieën voor de implementatie
 \end{itemize}
@@ -60,10 +60,10 @@ De resource library is per team opgezet en bevat:
 \end{itemize}
 
 \subsection{Klantenzone}
-Per team kan een klantenzone worden toegevoegd. Klanten krijgen toegang tot hun eigen omgeving waar ze de voortgang van projecten kunnen volgen, documenten kunnen inzien en revisies kunnen aanvragen. De klantenzone is volledig afgeschermd van interne teaminformatie.
+Per team kan een klantenzone worden toegevoegd. Klanten krijgen toegang tot hun eigen omgeving waar ze de voortgang van projecten kunnen volgen, documenten kunnen inzien en revisies kunnen aanvragen. De klantenzone is volledig weggedaan van interne teaminformatie.
 
 \subsection{Notificatiesysteem}
-Het platform bevat een uitgebreid notificatiesysteem. Gebruikers ontvangen meldingen bij updates aan taken, nieuwe toewijzingen, statuswijzigingen, opmerkingen op taken of documenten, en belangrijke projectgebeurtenissen. Notificaties zijn zichtbaar in de webapp en kunnen optioneel via e-mail worden verstuurd.
+Het platform bevat een grote notificatiesysteem. Gebruikers ontvangen meldingen bij updates aan taken, nieuwe toewijzingen, statuswijzigingen, opmerkingen op taken of documenten, en belangrijke projectgebeurtenissen. Notificaties zijn zichtbaar in de webapp en kunnen optioneel via e-mail worden verstuurd.
 
 \subsection{Fasebeheer en inline editing}
 Projecten kunnen worden opgedeeld in fases, die eenvoudig te beheren zijn. De status van projecten, taken en resources kan direct vanaf de hoofdpagina worden aangepast via inline editing. Dit versnelt het updaten van informatie en maakt het platform gebruiksvriendelijk.
@@ -89,8 +89,6 @@ export default async function handler(req, res) {
 \caption{Voorbeeld van een API route voor het aanmaken van een taak}
 \end{listing}
 
-% Voeg gerust meer codevoorbeelden toe voor belangrijke onderdelen zoals authenticatie, resource upload, of integratie met externe APIs.
-
 \section{Testen en evaluatie}
 Na de implementatie volgde een uitgebreide testfase. Hierbij werd gebruik gemaakt van:
 \begin{itemize}
@@ -103,15 +101,73 @@ Na de implementatie volgde een uitgebreide testfase. Hierbij werd gebruik gemaak
 De verzamelde feedback werd gebruikt om het platform verder te verbeteren en bugs of onduidelijkheden op te lossen.
 
 \section{Analyse en reflectie}
-In de laatste fase werden de resultaten van de tests en feedbacksessies geanalyseerd. Er werd gekeken in hoeverre het platform voldoet aan de vooraf opgestelde requirements en waar nog ruimte is voor verbetering. Ook werd gereflecteerd op de gekozen aanpak, de gebruikte tools en de algemene workflow. Op basis hiervan zijn aanbevelingen geformuleerd voor toekomstige uitbreidingen of optimalisaties.
+In de laatste fase werden de resultaten van de tests en feedbacksessies geanalyseerd. Er werd gekeken hoe ver het platform voldoet aan de vooraf opgestelde requirements en waar nog ruimte is voor verbetering. Ook werd gereflecteerd op de gekozen aanpak, de gebruikte tools en de algemene workflow. Op basis hiervan zijn aanbevelingen geformuleerd voor toekomstige uitbreidingen of optimalisaties.
 
 \section{Overzicht van de workflow}
-De gekozen methodologie heeft gezorgd voor een gestructureerde en iteratieve aanpak, waarbij telkens werd teruggekoppeld naar de centrale onderzoeksvraag en de praktijknoden van web agencies. Door te werken in duidelijke fasen en regelmatig feedback te verzamelen, kon het platform stapsgewijs worden opgebouwd en bijgestuurd waar nodig.
+De gekozen methodologie heeft gezorgd voor een gestructureerde en herhalend aanpak, waarbij telkens werd teruggekoppeld naar de centrale onderzoeksvraag en de praktijken van web agencies. Door te werken in duidelijke fasen en regelmatig feedback te verzamelen, kon het platform stapsgewijs worden opgebouwd en bijgestuurd waar nodig.
 
-% Vragen voor jou:
-% - Heb je Supabase of een andere database gebruikt?
-% - Heb je usability tests gedaan met echte gebruikers, of enkel met studenten/docenten?
-% - Heb je security/privacy expliciet getest, of enkel basis authenticatie?
-% - Wil je nog een flowchart toevoegen? (Zo ja, lever gerust een afbeelding aan.)
+\subsection{Iteratieve ontwikkelcyclus}
+Het ontwikkelproces werd bewust opgezet als een herhalende cyclus, geïnspireerd door agile principes. Elke cyclus bestond uit de volgende stappen:
+\begin{enumerate}
+    \item \textbf{Planning:} Bepalen van de prioriteiten en het selecteren van de functionaliteiten die in de volgende sprint zouden worden uitgewerkt.
+    \item \textbf{Ontwikkeling:} Implementeren van de geselecteerde features, waarbij telkens werd gestart met een minimale werkende versie (MVP) die vervolgens werd uitgebreid.
+    \item \textbf{Testen:} Uitvoeren van handmatige en geautomatiseerde tests op de nieuwe functionaliteiten.
+    \item \textbf{Feedback verzamelen:} Presenteren van de resultaten aan de co-promotor en testgebruikers, en het verzamelen van gerichte feedback.
+    \item \textbf{Refactoren en optimaliseren:} Op basis van de feedback werden verbeteringen en optimalisaties doorgevoerd, waarna de cyclus opnieuw begon.
+\end{enumerate}
+Deze aanpak zorgde ervoor dat het platform continu kon worden bijgestuurd op basis van reële noden en inzichten uit de praktijk.
+
+\subsection{Samenwerking en communicatie}
+Tijdens het project werd nauw samengewerkt met de co-promotor en werden regelmatig feedbackmomenten ingepland. Voor communicatie en taakopvolging werd gebruik gemaakt van GitHub Issues en project boards, zodat de voortgang transparant en gestructureerd kon worden opgevolgd. Belangrijke beslissingen en inzichten werden gedocumenteerd in een gedeelde notitieomgeving.
+
+\subsection{Documentatie en kennisdeling}
+Om de overdraagbaarheid en onderhoudbaarheid van het platform te waarborgen, werd veel aandacht besteed aan documentatie. Dit omvatte:
+\begin{itemize}
+    \item Uitgebreide technische documentatie van de architectuur, API-routes en datamodellen.
+    \item Gebruikershandleidingen voor de belangrijkste functionaliteiten.
+    \item Inline code comments en uitleg bij complexe logica.
+    \item Versiebeheer van documentatie via Git, zodat wijzigingen eenvoudig konden worden bijgehouden.
+\end{itemize}
+
+\subsection{Gebruik van best practices}
+Tijdens de ontwikkeling werd bewust gekozen voor moderne best practices op het gebied van webontwikkeling:
+\begin{itemize}
+    \item \textbf{Type safety:} Door het gebruik van Typescript werden veelvoorkomende fouten vroegtijdig opgespoord.
+    \item \textbf{Component-based development:} De frontend werd opgebouwd uit herbruikbare React-componenten, wat het onderhoud en de uitbreidbaarheid vergemakkelijkte.
+    \item \textbf{Code splitting en lazy loading:} Om de performance te optimaliseren werden zware componenten (zoals de Monaco Editor) alleen geladen wanneer nodig.
+    \item \textbf{State management:} Voor globale state werd gebruik gemaakt van React Context, met local state voor snelle interacties en server-synchronisatie op de achtergrond.
+    \item \textbf{Security by design:} Authenticatie, autorisatie en inputvalidatie werden vanaf het begin meegenomen in het ontwerp.
+    \item \textbf{CI/CD:} Automatische builds en deploys via GitHub Actions en Vercel zorgden voor snelle feedback en betrouwbare releases.
+\end{itemize}
+
+\subsection{Uitgebreide teststrategie}
+Naast de reeds beschreven functionele en usability tests, werd ook aandacht besteed aan:
+\begin{itemize}
+    \item \textbf{Unit tests:} Voor kritieke logica en utility-functies.
+    \item \textbf{Integratietests:} Voor het testen van de samenwerking tussen frontend, backend en database.
+    \item \textbf{Performance tests:} Meten van laadtijden, responstijden van API's en verwerking van bulkacties.
+    \item \textbf{Security checks:} Controleren van toegangscontrole, data-encryptie en inputvalidatie.
+\end{itemize}
+De resultaten van deze tests werden systematisch bijgehouden en gebruikt om het platform verder te verbeteren.
+
+\subsection{Reflectie op de methodologie}
+De gekozen methodologie heeft geleid tot een flexibel en robuust ontwikkelproces. Door de combinatie van literatuurstudie, iteratieve ontwikkeling, continue feedback en het gebruik van moderne tools en best practices, kon een platform worden gerealiseerd dat aansluit bij de actuele functies van web agencies. De aanpak maakte het mogelijk om snel in te spelen op nieuwe inzichten en veranderende benodigdheden, zonder de kwaliteit of de scope van het project uit het oog te verliezen.
+
+\subsection{Aanbevelingen voor toekomstige projecten}
+Op basis van de ervaringen in dit project kunnen de volgende aanbevelingen worden gedaan voor soortgelijke ontwikkeltrajecten:
+\begin{itemize}
+    \item Start met een grondige literatuurstudie en requirementsanalyse om de echte pijnpunten van de doelgroep te begrijpen.
+    \item Werk iteratief en verzamel continu feedback van eindgebruikers en stakeholders.
+    \item Documenteer niet alleen de code, maar ook beslissingen, architectuur en testresultaten.
+    \item Investeer in automatisering van tests en deployment om de kwaliteit en snelheid van opleveringen te verhogen.
+    \item Houd rekening met schaalbaarheid en security vanaf het begin van het project.
+\end{itemize}
+
+\subsection{Visueel overzicht van de methodologie}
+Ter ondersteuning van het beschreven proces is een visueel overzicht van de methodologie toegevoegd (zie Figuur~\ref{fig:methodologie-flowchart}). Dit diagram toont de verschillende fasen en hun onderlinge samenhang, en kan dienen als leidraad voor toekomstige projecten met een vergelijkbare scope.
+
+
+
+
 
 

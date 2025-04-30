@@ -35,7 +35,7 @@ De frontend is opgebouwd met Next.js (App Router) en React. Er is gekozen voor e
 \subsection{Structuur en routing}
 \begin{itemize}
     \item \textbf{App Router}: Alle routes zijn opgezet via de Next.js App Router, wat zorgt voor duidelijke scheiding tussen publieke, team- en klantenzones.
-    \item \textbf{Layout}: Gebruik van shared layouts voor consistente navigatie, theming en toegangscontrole.
+    \item \textbf{Layou€t}: Gebruik van shared layouts voor consistente navigatie, theming en toegangscontrole.
     \item \textbf{Code splitting}: Dynamische imports en React.lazy voor het optimaliseren van de laadtijd.
     \item \textbf{State management}: Gebruik van React Context en (optioneel) Zustand of Redux voor globale state, zoals gebruikersdata, notificaties en teamselectie.
     \item \textbf{Theming}: Implementatie van een dark/light theme via CSS-variabelen en context.
@@ -194,13 +194,74 @@ Het notificatiesysteem is ontworpen om gebruikers continu op de hoogte te houden
     \item \textbf{Diagrammen}: Zie figuren in dit hoofdstuk voor architectuuroverzicht en datamodellen.
 \end{itemize}
 
+\section{Toelichting op ontwerpkeuzes en alternatieven}
+\label{sec:ontwerpkeuzes}
+
+Bij het ontwerpen van het platform zijn verschillende alternatieven overwogen voor zowel de frontend als de backend. Voor de frontend is bewust gekozen voor Next.js met de App Router, omdat dit een moderne en flexibele aanpak biedt voor het bouwen van schaalbare webapplicaties. Alternatieven zoals traditionele React met Create React App of frameworks als Vue.js en Angular zijn overwogen, maar Next.js bood de beste balans tussen performance, SEO, server-side rendering en ontwikkelgemak.
+
+Voor de backend is gekozen om gebruik te maken van Next.js API-routes in combinatie met Supabase en Prisma. Dit maakt het mogelijk om serverless te werken, wat schaalbaarheid en onderhoud vereenvoudigt. Een alternatief zou zijn om een aparte Node.js/Express backend te bouwen, maar door alles binnen Next.js te houden, blijft de codebase overzichtelijk en is de integratie tussen frontend en backend optimaal.
+
+De keuze voor Supabase als database- en authenticatieoplossing werd ingegeven door de eenvoudige integratie met Next.js, de realtime mogelijkheden en het feit dat Supabase een open source alternatief is voor Firebase. Prisma werd gekozen voor het type-safe modelleren van de database en het eenvoudig uitvoeren van migraties.
+
+\section{Architecturale patronen en best practices}
+\label{sec:architecturale-patronen}
+
+Het platform maakt gebruik van verschillende architecturale patronen en best practices:
+\begin{itemize}
+    \item \textbf{Modulariteit:} Functionaliteit is opgesplitst in losse modules en componenten, waardoor onderhoud en uitbreiding eenvoudiger zijn.
+    \item \textbf{Single Responsibility Principle:} Elke component of module heeft één duidelijke verantwoordelijkheid.
+    \item \textbf{Separation of Concerns:} Scheiding tussen presentatie (UI), logica (hooks, services) en data (API, database).
+    \item \textbf{DRY (Don't Repeat Yourself):} Herbruikbare componenten, utility-functies en hooks voorkomen duplicatie van code.
+    \item \textbf{Security by design:} Authenticatie, autorisatie en inputvalidatie zijn vanaf het begin meegenomen in het ontwerp.
+    \item \textbf{Performance optimalisatie:} Lazy loading, code splitting, caching en debouncing worden toegepast waar relevant.
+    \item \textbf{Testbaarheid:} Componenten en logica zijn zo opgezet dat ze eenvoudig te testen zijn met unit- en integratietests.
+\end{itemize}
+
+\section{Uitbreidbaarheid en onderhoud}
+\label{sec:uitbreidbaarheid}
+
+De architectuur is bewust opgezet met het oog op toekomstige uitbreidingen. Nieuwe functionaliteiten kunnen eenvoudig worden toegevoegd door nieuwe modules of componenten te ontwikkelen zonder bestaande code te breken. Dankzij het gebruik van Typescript en Prisma is het eenvoudig om het datamodel uit te breiden en te migreren. De modulaire opzet maakt het ook mogelijk om delen van het platform te vervangen of te upgraden zonder grote veranderingen.
+
+Voor onderhoud is gekozen voor duidelijke documentatie, consistente code style (afgedwongen met ESLint en Prettier) en het gebruik van CI/CD pipelines voor automatische builds en tests. Dit zorgt ervoor dat het platform betrouwbaar blijft, ook als meerdere ontwikkelaars eraan werken.
+
+\section{Samenwerking en feedbackloops}
+\label{sec:samenwerking}
+
+Tijdens het ontwerp- en ontwikkelproces werd nauw samengewerkt met de co-promotor en werden regelmatig feedbackrondes georganiseerd. Wireframes, prototypes en architectuurdiagrammen werden besproken en bijgestuurd op basis van praktijkfeedback. Deze iteratieve aanpak zorgde ervoor dat het ontwerp steeds beter aansloot bij de noden van web agencies en eindgebruikers.
+
+\section{Documentatie en kennisborging}
+\label{sec:documentatie}
+
+Om de overzetten van bepaalde functies en onderhoudbaarheid van het platform te waarborgen, is veel aandacht besteed aan documentatie. Dit omvat:
+\begin{itemize}
+    \item Technische documentatie van de architectuur, API-routes en datamodellen.
+    \item Gebruikershandleidingen voor de belangrijkste functionaliteiten.
+    \item Inline code comments en uitleg bij complexe logica.
+    \item Versiebeheer van documentatie via Git.
+\end{itemize}
+Deze documentatie maakt het mogelijk om het platform eenvoudig over te dragen aan andere ontwikkelaars of uit te breiden in de toekomst.
+
+\section{Reflectie op de architectuur}
+\label{sec:reflectie-architectuur}
+
+De gekozen architectuur heeft in de praktijk geleid tot een flexibel, schaalbaar en gebruiksvriendelijk platform. Door te kiezen voor moderne technologieën en een flexibele opzet, kon snel worden ingespeeld op nieuwe inzichten en veranderende eisen. De combinatie van Next.js, Supabase, Prisma, React, Monaco Editor en Slate heeft gezorgd voor een sterke technische basis die eenvoudig kan worden uitgebreid met nieuwe features of integraties.
+
+Belangrijke lessen uit het architectuurproces zijn het belang van iteratief ontwerpen, het vroeg betrekken van eindgebruikers bij beslissingen, en het goed toepassen van best practices op het gebied van security, performance en onderhoudbaarheid.
+
+\section{Toekomstige uitbreidingen en optimalisaties}
+\label{sec:toekomstige-uitbreidingen}
+
+Hoewel het platform nu al veel functionaliteit biedt, zijn er verschillende mogelijkheden voor verdere optimalisatie en uitbreiding:
+\begin{itemize}
+    \item Integratie met extra externe tools zoals Slack, Jira of cloud storage oplossingen.
+    \item Verdere optimalisatie van performance, met name voor mobiele apparaten en bij hoge belasting.
+    \item Uitbreiding van de rapportage- en analysemogelijkheden voor projectvoortgang en resourcegebruik.
+    \item Opzetten van een mobiele app of progressive web app (PWA) voor betere toegankelijkheid.
+    \item Uitvoeren van formele security audits en grootschalige load tests.
+\end{itemize}
+
 \section{Samenvatting}
 \label{sec:samenvatting}
 
-De gekozen design en architectuur zorgen voor een schaalbaar, veilig en gebruiksvriendelijk platform dat eenvoudig kan worden uitgebreid. Door te kiezen voor moderne technologieën en een modulaire opzet, is het platform voorbereid op de noden van web agencies en hun klanten.
+De gekozen design en architectuur zorgen voor een schaalbaar, veilig en gebruiksvriendelijk platform dat eenvoudig kan worden uitgebreid. Door te kiezen voor moderne technologieën en het toepassen van best practices, is het platform voorbereid voor een web agencies en hun klanten. De iteratieve en samenwerkende aanpak heeft geleid tot een oplossing die niet alleen technisch sterk is, maar ook goed aansluit bij de praktijk.
 
-% Vragen voor jou:
-% - Zijn er nog andere externe integraties gebruikt (bv. Slack, Jira, ...)? 
-% - Zijn er specifieke security audits of pentests uitgevoerd?
-% - Wil je extra diagrammen of codevoorbeelden toevoegen? (Lever gerust aan!)
-% - Zijn er specifieke design patterns of architecturale principes die je extra wil toelichten?

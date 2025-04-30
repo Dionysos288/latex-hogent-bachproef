@@ -1,7 +1,7 @@
 \chapter{Ontwikkeling en Implementatie}
 \label{ch:ontwikkeling}
 
-Dit hoofdstuk behandelt het volledige ontwikkelingsproces van het platform, met een diepgaande focus op de implementatie van de kernfunctionaliteiten, de gebruikte technieken, de iteratieve aanpak en de uitdagingen die tijdens de ontwikkeling zijn overwonnen. Het doel is om een transparant en volledig beeld te geven van hoe het platform tot stand is gekomen, van eerste setup tot de uiteindelijke oplevering.
+Dit hoofdstuk behandelt het volledige ontwikkelingsproces van het platform, met een diepgaande focus op de implementatie van de kernfunctionaliteiten, de gebruikte technieken, de herhalende aanpak en de uitdagingen die tijdens de ontwikkeling zijn overwonnen. Het doel is om een transparant en volledig beeld te geven van hoe het platform tot stand is gekomen, van eerste setup tot de uiteindelijke oplevering.
 
 \section{Projectopzet en Voorbereiding}
 \label{sec:projectopzet}
@@ -9,7 +9,7 @@ Dit hoofdstuk behandelt het volledige ontwikkelingsproces van het platform, met 
 De ontwikkeling startte met het opzetten van een moderne ontwikkelomgeving. Er werd gekozen voor een standaard \textbf{Next.js} projectstructuur, waarbij frontend en backend code in één repository worden beheerd. De belangrijkste stappen in deze fase waren:
 \begin{itemize}
     \item Initialisatie van een Next.js project met Typescript voor typeveiligheid en schaalbaarheid.
-    \item Integratie van Supabase als backend-as-a-service voor database, authenticatie en realtime functionaliteit.
+    \item Integratie van Supabase als backend voor database en realtime functionaliteit.
     \item Installatie en configuratie van Prisma als ORM voor het modelleren van de database en het uitvoeren van migraties.
     \item Opzetten van een gestructureerde mappenstructuur voor componenten, pagina's, API-routes en util-functies.
     \item Inrichten van ESLint en Prettier voor consistente codekwaliteit.
@@ -19,7 +19,7 @@ De ontwikkeling startte met het opzetten van een moderne ontwikkelomgeving. Er w
 \section{Iteratief Ontwikkelingsproces}
 \label{sec:iteratief-proces}
 
-De ontwikkeling verliep volgens een iteratief proces, waarbij telkens kleine deelmodules werden uitgewerkt, getest en bijgestuurd op basis van feedback. De belangrijkste iteraties waren:
+De ontwikkeling verliep volgens een herhalende proces, waarbij telkens kleine deelmodules werden uitgewerkt, getest en bijgestuurd op basis van feedback. De belangrijkste iteraties waren:
 \begin{itemize}
     \item MVP (Minimum Viable Product): Basisfunctionaliteiten zoals authenticatie, teambeheer, project- en takenbeheer.
     \item Feature-uitbreidingen: Toevoegen van resource library, klantenzone, notificatiesysteem en integraties.
@@ -109,7 +109,6 @@ De ontwikkeling verliep volgens een iteratief proces, waarbij telkens kleine dee
     \item Usability tests met eindgebruikers (collega-studenten, docenten, of mensen uit het werkveld).
     \item Debugging met browser developer tools, logging en monitoring via Vercel Analytics of Sentry.
     \item Security checks op authenticatie, toegangscontrole en dataopslag.
-    % Voor end-to-end testing en security audits zijn (nog) geen specifieke tools of processen ingezet.
 \end{itemize}
 
 \section{Uitdagingen en Oplossingen}
@@ -117,7 +116,7 @@ De ontwikkeling verliep volgens een iteratief proces, waarbij telkens kleine dee
 
 Tijdens de ontwikkeling zijn verschillende uitdagingen overwonnen, waaronder:
 \begin{itemize}
-    \item \textbf{Rechten en toegangscontrole}: Het correct afschermen van data tussen teams en klanten vergde een zorgvuldig opgezet autorisatiemodel.
+    \item \textbf{Rechten en toegangscontrole}: Het correct afschermen van data tussen teams en klanten zorgde voor een zorgvuldig opgezet autorisatiemodel.
     \item \textbf{Realtime updates}: Het implementeren van realtime functionaliteit zonder performanceverlies.
     \item \textbf{Bulkacties en inline editing}: Het efficiënt verwerken van bulk updates en het direct aanpassen van data in de UI.
     \item \textbf{Integratie van meerdere externe APIs}: Het combineren van verschillende externe diensten op een consistente manier.
@@ -138,7 +137,7 @@ Gedurende het project zijn verschillende refactorings doorgevoerd:
 \section{Overzicht van de Workflow}
 \label{sec:workflow}
 
-Het ontwikkelproces werd gekenmerkt door een iteratieve aanpak, waarbij telkens werd teruggekoppeld naar de centrale requirements en praktijknoden. Door te werken in korte sprints en regelmatig feedback te verzamelen, kon het platform stapsgewijs worden opgebouwd en bijgestuurd waar nodig.
+Het ontwikkelproces werd gekenmerkt door een iteratieve aanpak, waarbij telkens werd teruggekoppeld naar de centrale requirements en functies. Door te werken in korte sprints en regelmatig feedback te verzamelen, kon het platform stapsgewijs worden opgebouwd en bijgestuurd waar nodig.
 
 \section{Voorbeeld codefragmenten}
 \label{sec:codefragmenten}
@@ -169,5 +168,5 @@ export default async function handler(req, res) {
 \section{Samenvatting}
 \label{sec:samenvatting}
 
-De ontwikkeling van het platform verliep via een gestructureerd, iteratief proces met veel aandacht voor schaalbaarheid, gebruiksvriendelijkheid en veiligheid. Door moderne technologieën en best practices te combineren, is een solide basis gelegd voor een toekomstbestendig platform voor web agencies.
+De ontwikkeling van het platform verliep via een gestructureerd, herhalende proces met veel aandacht voor schaalbaarheid, gebruiksvriendelijkheid en veiligheid. Door moderne technologieën en best practices te combineren, is een solide basis gelegd voor een toekomstbestendig platform voor web agencies.
 

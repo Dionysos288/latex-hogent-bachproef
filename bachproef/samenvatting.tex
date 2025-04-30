@@ -45,27 +45,23 @@
 
 \chapter*{\IfLanguageName{dutch}{Samenvatting}{Abstract}}
 
-% Web agencies gebruiken veel verschillende tools voor hun dagelijks werk. Ze hebben aparte systemen voor projectbeheer, code schrijven, bestanden delen en klantcommunicatie. Dit zorgt voor problemen: het kost veel tijd om tussen deze tools te wisselen, informatie raakt verspreid en het is moeilijk om overzicht te houden.
+Deze bachelorproef richt zich op het ontwikkelen van een samenhangend platform voor web agencies, met als doel het optimaliseren van projectmanagement, resourcebeheer en klantcommunicatie. Web agencies werken traditioneel met een versnipperd landschap van tools voor projectbeheer, code, design, documentatie en communicatie, wat leidt tot tijdsverlies, inefficiëntie en een gebrek aan overzicht. De centrale onderzoeksvraag luidde: \emph{Hoe kan een geïntegreerd platform worden ontwikkeld dat de workflows van web agencies optimaliseert door project management, resource beheer en klantcommunicatie te combineren in één samenhangend systeem?}
 
-% Deze bachelorproef onderzoekt hoe we deze problemen kunnen oplossen door één platform te maken dat alle nodige functies combineert. Het doel is om het werk van web agencies makkelijker en efficiënter te maken.
+Om deze vraag te beantwoorden werd gestart met een grondige literatuurstudie naar de huidige stand van zaken in de sector. Uit deze studie bleek dat bestaande oplossingen zoals Jira, Trello, Figma, Notion en ClickUp elk slechts een deel van de workflow ondersteunen en vaak onvoldoende integratie bieden. De belangrijkste pijnpunten zijn gefragmenteerde workflows, inefficiënt resourcebeheer, beperkte klanttransparantie en het ontbreken van een centrale plek voor alle projectinformatie.
 
-% De hoofdvraag van dit onderzoek is: "Hoe kunnen we één systeem maken dat projectbeheer, resource management en klantcommunicatie samenbrengt voor web agencies?"
+Op basis van deze inzichten werd een proof-of-concept platform ontwikkeld met de volgende kernfunctionaliteiten:
+\begin{itemize}
+    \item \textbf{Project- en taakmanagement:} Een intuïtief dashboard met drag-and-drop, inline editing, bulkacties en templates voor veelvoorkomende workflows.
+    \item \textbf{Resource library:} Centrale opslag en beheer van code snippets (met Monaco Editor), design assets (met Figma-integratie en Cloudflare Images) en documenten (met Slate rich text editor en versiebeheer).
+    \item \textbf{Team- en klantenzones:} Afgeschermde omgevingen voor teams en klanten, met strikte toegangscontrole en privacy.
+    \item \textbf{Realtime notificaties:} Directe updates bij wijzigingen in projecten, taken en resources via Supabase Realtime.
+    \item \textbf{Naadloze integraties:} Koppelingen met Google Calendar, Figma en Cloudflare Images voor een vloeiende workflow.
+\end{itemize}
 
-% Om deze vraag te beantwoorden hebben we eerst onderzocht welke problemen web agencies nu hebben. Daarna hebben we een platform ontwikkeld met deze belangrijke functies:
-% \begin{itemize}
-%     \item Een projectbeheersysteem met takenlijsten en planning
-%     \item Een bibliotheek voor het delen van code en bestanden
-%     \item Een klantportaal waar klanten projectvoortgang kunnen zien
-%     \item Een systeem dat werkt met Google Calendar
-%     \item Een code editor waar teams samen kunnen werken
-% \end{itemize}
+De methodologie bestond uit een herhalende ontwikkelproces, waarbij telkens kleine deelmodules werden uitgewerkt, getest en bijgestuurd op basis van feedback van testgebruikers, collega-studenten en de co-promotor. Zowel functionele als usability tests werden uitgevoerd, met aandacht voor gebruiksgemak, performance, security en schaalbaarheid. De testomgeving simuleerde een realistische agency omgeving met verschillende rollen en projecten.
 
-% We hebben het platform getest met verschillende web agencies. Uit de tests blijkt dat:
-% \begin{itemize}
-%     \item Teams 40\% minder tijd kwijt zijn aan het wisselen tussen tools
-%     \item Klanten beter op de hoogte blijven van hun projecten
-%     \item Het makkelijker is om bestanden en code te delen
-%     \item De communicatie tussen team en klant veel beter verloopt
-% \end{itemize}
+Uit de analyse van de testresultaten blijkt dat het platform een duidelijke meerwaarde biedt ten opzichte van bestaande oplossingen. Gebruikers gaven aan dat zij minder tijd kwijt waren aan het wisselen tussen tools, sneller konden werken dankzij local-first synchronisatie en direct feedback kregen bij bewerkingen. De centrale resource library en de mogelijkheid om samen te werken aan code, design en documentatie werden als grote voordelen ervaren. Ook de klantenzone en realtime notificaties droegen bij aan een betere samenwerking en transparantie.
 
-% Deze resultaten laten zien dat een geïntegreerd platform echt kan helpen om het werk van web agencies te verbeteren. Het platform zorgt voor betere samenwerking, minder tijdverlies en meer tevreden klanten. Voor de toekomst raden we aan om het platform uit te breiden met AI-functies en nog meer integraties met andere tools.
+Hoewel het platform in hoge mate voldoet aan de gestelde requirements, zijn er ook enkele beperkingen en aandachtspunten. Zo zijn er nog geen geautomatiseerde end-to-end tests of security audits uitgevoerd, en is de evaluatie vooral gebaseerd op kwalitatieve feedback van een beperkte groep gebruikers. Gebruikers gaven aan dat zij in de toekomst graag meer integraties, mobiele ondersteuning, geavanceerdere zoek- en filtermogelijkheden en AI-ondersteunde features zouden zien.
+
+De bachelorproef levert een werkend proof-of-concept en een blauwdruk voor hoe moderne web agencies hun workflows kunnen stroomlijnen. De combinatie van projectmanagement, resourcebeheer en klantcommunicatie in één platform resulteert in efficiëntere processen, betere samenwerking en meer tevreden klanten. Verdere optimalisatie, uitbreiding van functionaliteit en grootschalige praktijkproeven zullen de impact op het werkveld nog verder vergroten.

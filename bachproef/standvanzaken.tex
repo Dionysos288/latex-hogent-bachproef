@@ -9,9 +9,11 @@ Dit hoofdstuk presenteert een grondige analyse van de huidige staat van project-
 De hedendaagse web development sector wordt gekenmerkt door toenemende moeilijkheden in projectmanagement en resource allocatie. Het \textcite{GitLab2023} DevSecOps rapport identificeert verschillende kritieke uitdagingen waarmee development teams dagelijks worden geconfronteerd:
 
 \begin{itemize}
-    \item \textbf{Tool fragmentatie}: Teams moeten schakelen tussen veel verschillende systemen
-    \item \textbf{Workflow onderbrekingen}: Constante context-switching tussen tools
-    \item \textbf{Kennisverspreiding}: Informatie verspreid over meerdere platforms
+    \item \textbf{Tool fragmentatie}: Teams moeten schakelen tussen veel verschillende systemen, wat leidt tot inefficiëntie en verlies van overzicht.
+    \item \textbf{Workflow onderbrekingen}: Constante context-switching tussen tools zorgt voor tijdsverlies en verhoogt de kans op fouten.
+    \item \textbf{Kennisverspreiding}: Informatie is verspreid over meerdere platforms, waardoor kennisdeling en samenwerking moeilijker wordt.
+    \item \textbf{Gebrek aan centrale communicatie}: Klantcommunicatie en interne communicatie verlopen vaak via verschillende kanalen, wat leidt tot misverstanden en vertragingen.
+    \item \textbf{Beperkte automatisering}: Veel processen zijn handmatig, waardoor teams niet optimaal kunnen inspelen op veranderingen of schaalvergroting.
 \end{itemize}
 
 \subsection{Project en task management}
@@ -22,34 +24,34 @@ Het \textcite{Atlassian2023} rapport over Agile practices toont verschillende ui
 \begin{itemize}
     \item \textbf{Project Planning}
     \begin{itemize}
-        \item Moeilijkheden bij het opstellen van realistische timelines
-        \item Uitdagingen in het definiëren van project scopes
-        \item Complexiteit van budget allocatie
-        \item Gebrek aan inzicht in resource beschikbaarheid
+        \item Moeilijkheden bij het opstellen van realistische timelines en het inschatten van benodigde resources.
+        \item Uitdagingen in het definiëren van project scopes, vooral bij snel veranderende klantwensen.
+        \item Complexiteit van budget allocatie en het bewaken van kosten versus opbrengsten.
+        \item Gebrek aan inzicht in resource beschikbaarheid, waardoor projecten vertraging kunnen oplopen.
     \end{itemize}
     
     \item \textbf{Task Management}
     \begin{itemize}
-        \item Uitdagingen in het prioriteren van taken
-        \item Problemen met het tracken van afhankelijkheden
-        \item Moeilijkheden bij het balanceren van workload
-        \item Gebrek aan duidelijke task ownership
+        \item Uitdagingen in het prioriteren van taken en het stellen van duidelijke deadlines.
+        \item Problemen met het tracken van afhankelijkheden tussen taken en teams.
+        \item Moeilijkheden bij het balanceren van workload, vooral bij parallelle projecten.
+        \item Gebrek aan duidelijke task ownership, wat leidt tot onduidelijkheid over verantwoordelijkheden.
     \end{itemize}
     
     \item \textbf{Team Resource Allocatie}
     \begin{itemize}
-        \item Complexiteit van skill-matching met taken
-        \item Uitdagingen in capacity planning
-        \item Moeilijkheden bij het managen van parallelle projecten
-        \item Gebrek aan flexibiliteit bij onverwachte wijzigingen
+        \item Complexiteit van skill-matching met taken, zeker in multidisciplinaire teams.
+        \item Uitdagingen in capacity planning en het voorkomen van overbelasting.
+        \item Moeilijkheden bij het managen van parallelle projecten en het snel kunnen herverdelen van resources.
+        \item Gebrek aan flexibiliteit bij onverwachte wijzigingen in planning of teambezetting.
     \end{itemize}
     
     \item \textbf{Project Monitoring}
     \begin{itemize}
-        \item Beperkt inzicht in real-time projectstatus
-        \item Moeilijkheden bij het tracken van milestones
-        \item Uitdagingen in het meten van project gezondheid
-        \item Gebrek aan vroege waarschuwingssystemen
+        \item Beperkt inzicht in real-time projectstatus en voortgang.
+        \item Moeilijkheden bij het tracken van milestones en het tijdig signaleren van risico's.
+        \item Uitdagingen in het meten van project gezondheid en het rapporteren aan stakeholders.
+        \item Gebrek aan vroege waarschuwingssystemen voor vertragingen of resourceproblemen.
     \end{itemize}
 \end{itemize}
 
@@ -61,29 +63,29 @@ Het \textcite{GitHub2023} Octoverse rapport toont de cruciale rol van een goed g
 \begin{itemize}
     \item \textbf{Code Management}
     \begin{itemize}
-        \item Uitdagingen in het organiseren van herbruikbare componenten
-        \item Moeilijkheden bij het vinden van relevante code snippets
-        \item Gebrek aan context bij bestaande oplossingen
-        \item Versie beheer van gedeelde componenten
-        \item Documentatie van code gebruik en implementatie
+        \item Uitdagingen in het organiseren van herbruikbare componenten en het voorkomen van duplicatie.
+        \item Moeilijkheden bij het vinden van relevante code snippets, vooral in grotere teams.
+        \item Gebrek aan context bij bestaande oplossingen, waardoor kennis verloren gaat.
+        \item Versiebeheer van gedeelde componenten is vaak niet gestandaardiseerd.
+        \item Documentatie van code gebruik en implementatie ontbreekt of is versnipperd.
     \end{itemize}
     
     \item \textbf{Design Asset Management}
     \begin{itemize}
-        \item Complexiteit van design system versioning
-        \item Uitdagingen in het beheren van brand assets
-        \item Moeilijkheden bij het delen van UI componenten
-        \item Gebrek aan consistentie in asset gebruik
-        \item Inefficiënt zoeken naar specifieke assets
+        \item Complexiteit van design system versioning en het beheren van verschillende varianten.
+        \item Uitdagingen in het beheren van brand assets en het waarborgen van consistentie.
+        \item Moeilijkheden bij het delen van UI componenten tussen teams en projecten.
+        \item Gebrek aan consistentie in asset gebruik, wat leidt tot een onsamenhangende visuele identiteit.
+        \item Inefficiënt zoeken naar specifieke assets, vooral bij groeiende bibliotheken.
     \end{itemize}
     
     \item \textbf{Document Management}
     \begin{itemize}
-        \item Uitdagingen in template standards
-        \item Moeilijkheden bij het tracken van document versies
-        \item Gebrek aan gestructureerde metadata
-        \item Inefficiënte zoek- en filtermogelijkheden
-        \item Beperkte mogelijkheden voor collaborative editing
+        \item Uitdagingen in template standards en het hergebruiken van documentatie.
+        \item Moeilijkheden bij het tracken van document versies en het terugvinden van oude revisies.
+        \item Gebrek aan gestructureerde metadata, wat het zoeken en filteren bemoeilijkt.
+        \item Inefficiënte zoek- en filtermogelijkheden, vooral bij grote hoeveelheden documenten.
+        \item Beperkte mogelijkheden voor collaborative editing en real-time samenwerking.
     \end{itemize}
 \end{itemize}
 
@@ -95,26 +97,26 @@ Het \textcite{StackOverflow2023} onderzoek identificeert specifieke moeilijkhede
 \begin{itemize}
     \item \textbf{Data Synchronisatie}
     \begin{itemize}
-        \item Inconsistenties tussen verschillende platforms
-        \item Uitdagingen in real-time updates
-        \item Complexiteit van data mapping
-        \item Moeilijkheden bij het behouden van data integriteit
+        \item Inconsistenties tussen verschillende platforms, wat leidt tot fouten en dubbel werk.
+        \item Uitdagingen in real-time updates en het voorkomen van conflicten.
+        \item Complexiteit van data mapping tussen tools met verschillende datamodellen.
+        \item Moeilijkheden bij het behouden van data bij het importeren/exporteren van gegevens.
     \end{itemize}
     
     \item \textbf{Workflow Integratie}
     \begin{itemize}
-        \item Gebrek aan naadloze overgangen tussen tools
-        \item Uitdagingen in het automatiseren van processen
-        \item Moeilijkheden bij het tracken van cross-tool activiteiten
-        \item Beperkte mogelijkheden voor custom workflows
+        \item Gebrek aan naadloze overgangen tussen tools, waardoor processen worden onderbroken.
+        \item Uitdagingen in het automatiseren van processen over verschillende systemen heen.
+        \item Moeilijkheden bij het tracken van cross-tool activiteiten en het behouden van overzicht.
+        \item Beperkte mogelijkheden voor custom workflows die aansluiten bij de specifieke noden van een agency.
     \end{itemize}
     
     \item \textbf{User Experience}
     \begin{itemize}
-        \item Inconsistente interfaces tussen verschillende tools
-        \item Complexe navigatie tussen systemen
-        \item Verwarrende notificatie systemen
-        \item Gebrek aan unified search functionaliteit
+        \item Inconsistente interfaces tussen verschillende tools, wat leidt tot verwarring bij gebruikers.
+        \item Complexe navigatie tussen systemen, vooral voor nieuwe teamleden.
+        \item Verwarrende notificatie systemen, waardoor belangrijke updates gemist worden.
+        \item Gebrek aan unified search functionaliteit over alle resources en projecten heen.
     \end{itemize}
 \end{itemize}
 
@@ -126,22 +128,25 @@ Het \textcite{GitLab2023} rapport analyseert de huidige markt van project en res
 \begin{itemize}
     \item \textbf{Project Management Platforms}
     \begin{itemize}
-        \item Jira: Krachtig maar complex voor kleine teams
-        \item Trello: Gebruiksvriendelijk maar beperkt in functionaliteit
-        \item Asana: Goed voor task management, zwak in resource beheer
-        \item Monday: Visueel sterk maar beperkt in technische integraties
-        \item ClickUp: Veelzijdig maar overweldigend in opties
+        \item Jira: Krachtig maar complex voor kleine teams, met een steile leercurve en veel configuratie-opties.
+        \item Trello: Gebruiksvriendelijk en visueel, maar beperkt in functionaliteit voor grotere projecten of agencies.
+        \item Asana: Goed voor task management, maar minder geschikt voor diepgaand resourcebeheer of technische integraties.
+        \item Monday: Visueel sterk en flexibel, maar beperkt in technische integraties en automatisering.
+        \item ClickUp: Veelzijdig en alles-in-één, maar kan overweldigend zijn door het grote aantal opties en instellingen.
     \end{itemize}
     
     \item \textbf{Resource Management Tools}
     \begin{itemize}
-        \item Figma: Sterk in design maar beperkt in andere resources
-        \item GitHub: Uitstekend voor code, zwak in andere assets
-        \item Notion: Goed voor documenten, beperkt in technische assets
-        \item Confluence: Krachtig voor documentatie, complex in gebruik
-        \item SharePoint: Uitgebreid maar niet ontwikkelaar-vriendelijk
+        \item Figma: Sterk in design en samenwerking, maar beperkt in beheer van andere resources zoals code of documenten.
+        \item GitHub: Uitstekend voor codebeheer en versiecontrole, maar minder geschikt voor design assets of documentatie.
+        \item Notion: Goed voor documenten en kennisdeling, maar beperkt in technische assets en integraties.
+        \item Confluence: Krachtig voor documentatie en samenwerking, maar complex in gebruik en minder geschikt voor snelle iteraties.
+        \item SharePoint: Uitgebreid en schaalbaar, maar niet specifiek gericht op ontwikkelteams en vaak omslachtig in gebruik.
     \end{itemize}
 \end{itemize}
+
+\subsection{Beperkingen van bestaande oplossingen}
+Hoewel elk van deze tools sterke punten heeft, blijkt uit de literatuur en praktijk dat geen enkele oplossing een volledig samenhangend workflow biedt voor web agencies. Teams zijn vaak genoodzaakt om meerdere tools te combineren, wat leidt tot extra kosten, complexiteit en een verhoogde kans op fouten. De beperkte samenwerking tussen tools zorgt ervoor dat informatie verloren gaat, processen worden vertraagd en de samenwerking niet goed verloopt.
 
 \section{Toekomstige Ontwikkelingen}
 \label{sec:toekomst}
@@ -151,30 +156,40 @@ Het \textcite{StateOfAgile2023} rapport toont belangrijke trends voor project en
 \begin{itemize}
     \item \textbf{Project Management Innovaties}
     \begin{itemize}
-        \item AI-ondersteunde planning en estimatie
-        \item Predictieve analytics voor projectrisico's
-        \item Geautomatiseerde resource allocatie
-        \item Smart workload balancing
-        \item Contextbewuste task prioritering
+        \item AI-ondersteunde planning en estimatie, waardoor projecten nauwkeuriger en efficiënter kunnen worden gepland.
+        \item Predictieve analytics voor projectrisico's en resourcebehoeften.
+        \item Geautomatiseerde resource allocatie op basis van actuele data en teamcapaciteit.
+        \item Smart workload balancing en automatische herverdeling van taken bij wijzigingen.
+        \item Contextbewuste task prioritering, waarbij het systeem suggesties doet op basis van projectdoelen en deadlines.
     \end{itemize}
     
     \item \textbf{Resource Library Evolutie}
     \begin{itemize}
-        \item AI-powered resource tagging en categorisatie
-        \item Automatische versie controle en conflict resolutie
-        \item Smart search en aanbevelingen
-        \item Real-time collaborative editing
-        \item Geautomatiseerde metadata generatie
+        \item AI-powered resource tagging en categorisatie voor sneller terugvinden van relevante assets.
+        \item Automatische versie controle en conflict resolutie bij gelijktijdige bewerkingen.
+        \item Smart search en aanbevelingen op basis van gebruiksgeschiedenis en teamvoorkeuren.
+        \item Real-time collaborative editing, zodat meerdere teamleden tegelijk aan dezelfde resource kunnen werken.
+        \item Geautomatiseerde metadata generatie voor betere zoek- en filtermogelijkheden.
     \end{itemize}
     
     \item \textbf{Integratie Verbeteringen}
     \begin{itemize}
-        \item Unified platforms voor alle projectresources
-        \item Naadloze cross-tool workflows
-        \item Geautomatiseerde data synchronisatie
-        \item Contextbewuste navigatie tussen tools
-        \item Intelligente notificatie systemen
+        \item Unified platforms voor alle projectresources, waardoor context-switching tot een minimum wordt beperkt.
+        \item Naadloze cross-tool workflows en automatisering van repetitieve taken.
+        \item Geautomatiseerde data synchronisatie tussen verschillende systemen.
+        \item Contextbewuste navigatie tussen tools, afgestemd op de rol en behoeften van de gebruiker.
+        \item Intelligente notificatie systemen die alleen relevante updates tonen.
     \end{itemize}
+\end{itemize}
+
+\subsection{Opkomende technologieën en best practices}
+Naast de trends uit de literatuur zijn er ook technologische ontwikkelingen die de toekomst van web agency platforms zullen beïnvloeden:
+\begin{itemize}
+    \item \textbf{Serverless architecturen} maken het mogelijk om schaalbare en kostenefficiënte oplossingen te bouwen.
+    \item \textbf{Low-code en no-code tools} verlagen de drempel voor het aanpassen en uitbreiden van workflows.
+    \item \textbf{Integratie van cloud storage en edge computing} zorgt voor snellere toegang tot resources en betere performance wereldwijd.
+    \item \textbf{Toenemende aandacht voor security en privacy}, met strengere regelgeving en geavanceerdere beveiligingsmaatregelen.
+    \item \textbf{Mobiele optimalisatie en PWA's} (Progressive Web Apps) maken het mogelijk om altijd en overal toegang te hebben tot projecten en resources.
 \end{itemize}
 
 \section{Conclusie Literatuurstudie}
@@ -185,28 +200,28 @@ Deze literatuurstudie toont aan dat er een duidelijke nood is aan een samenwerke
 \begin{itemize}
     \item \textbf{Geïntegreerd Project Management}
     \begin{itemize}
-        \item Intuïtieve planning en tracking
-        \item Flexibele resource allocatie
-        \item Real-time voortgangsmonitoring
-        \item Geautomatiseerde workflows
+        \item Intuïtieve planning en tracking van projecten en taken.
+        \item Flexibele resource allocatie en skill-matching.
+        \item Real-time voortgangsmonitoring en rapportage.
+        \item Geautomatiseerde workflows en slimme notificaties.
     \end{itemize}
     
     \item \textbf{Centrale Resource Library}
     \begin{itemize}
-        \item Unified storage voor alle assets
-        \item Krachtige zoek- en filterfuncties
-        \item Gestructureerd versie beheer
-        \item Intelligente categorisatie
+        \item Samenhangende storage voor alle assets (code, design, documenten).
+        \item Krachtige zoek- en filterfuncties, ondersteund door AI en metadata.
+        \item Gestructureerd versiebeheer en conflictresolutie.
+        \item Intelligente categorisatie en tagging.
     \end{itemize}
     
     \item \textbf{Naadloze Integratie}
     \begin{itemize}
-        \item Consistente gebruikerservaring
-        \item Geautomatiseerde synchronisatie
-        \item Contextbewuste navigatie
-        \item Unified search across resources
+        \item Consistente gebruikerservaring over alle modules en devices.
+        \item Geautomatiseerde synchronisatie van data en workflows.
+        \item Contextbewuste navigatie en unified search over alle resources.
+        \item Eenvoudige integratie met externe tools en systemen.
     \end{itemize}
 \end{itemize}
 
-Deze inzichten vormen de basis voor de ontwikkeling van het platform dat in de volgende hoofdstukken wordt beschreven. De focus ligt daarbij op het creëren van een samenwerkende oplossing die de gevonden problemen adresseert en aan de moderne eisen van web development teams voldoet.
+Deze inzichten vormen de basis voor de ontwikkeling van het platform dat in de volgende hoofdstukken wordt beschreven. De focus ligt daarbij op het creëren van een samenwerkende oplossing die de gevonden problemen adresseert en aan de moderne eisen van web development teams voldoet. Door te bouwen op de best practices en trends uit de literatuur, wordt gestreefd naar een toekomstbestendig, schaalbaar en gebruiksvriendelijk platform dat web agencies helpt om hun volledige potentieel te benutten.
 

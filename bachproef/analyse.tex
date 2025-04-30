@@ -1,25 +1,25 @@
 \chapter{Analyse en Resultaten}
 \label{ch:analyse}
 
-Dit hoofdstuk presenteert een diepgaande analyse van de testresultaten en vergelijkt het ontwikkelde platform met bestaande oplossingen op de markt. De evaluatie is gebaseerd op functionele criteria, gebruikerservaring, integratiemogelijkheden en de mate waarin het platform de in de literatuurstudie geïdentificeerde problemen oplost. Daarnaast wordt gereflecteerd op de meerwaarde en beperkingen van het platform.
+Dit hoofdstuk presenteert een grondige analyse van de testresultaten en vergelijkt het gemaakte platform met bestaande oplossingen op de markt. De evaluatie is gebaseerd op criteria, gebruikerservaring, integratiemogelijkheden en de mate waarin het platform de in de literatuurstudie geïdentificeerde problemen oplost. Daarnaast wordt gereflecteerd op de meerwaarde en beperkingen van het platform.
 
 \section{Analyse van Testresultaten}
 \label{sec:analyse-resultaten}
 
-Tijdens de testfase is het platform geëvalueerd door middel van functionele tests, usability tests en feedbacksessies met eindgebruikers (collega-studenten, docenten en/of mensen uit het werkveld). De belangrijkste bevindingen zijn:
+Tijdens de testfase is het platform getest door middel van functionele tests, usability tests en feedbacksessies met eindgebruikers (collega-studenten, docenten en/of mensen uit het werkveld). De belangrijkste resultaten zijn:
 
 \begin{itemize}
     \item \textbf{Gebruiksgemak:} Gebruikers gaven aan dat de centrale dashboardweergave, de snelle navigatie tussen projecten, taken en resources, en de mogelijkheid tot inline editing het werken aanzienlijk versnellen in vergelijking met traditionele tools zoals Jira, Trello en Asana.
-    \item \textbf{Snelheid en responsiviteit:} Door het local-first synchronisatieprincipe van de custom hooks worden wijzigingen direct zichtbaar, wat zorgt voor een vloeiende gebruikerservaring. Dit werd als een groot voordeel ervaren ten opzichte van platforms die enkel server-side updates tonen.
-    \item \textbf{Resource management:} De geïntegreerde resource library (met code, design en documenten) werd als zeer waardevol ervaren. Vooral de mogelijkheid om code snippets te bewerken met Monaco Editor, design assets te beheren en documenten te versioneren met Slate, werd als onderscheidend gezien.
+    \item \textbf{Snelheid en responsiviteit:} Door het local-first synchronisatie van de custom hooks worden wijzigingen direct zichtbaar, wat zorgt voor een vloeiende gebruikerservaring. Dit werd als een groot voordeel ervaren ten opzichte van platforms die enkel server-side updates tonen.
+    \item \textbf{Resource management:} De samenwerkende resource library (met code, design en documenten) werd als zeer waardevol ervaren. Vooral de mogelijkheid om code snippets te bewerken met Monaco Editor, design assets te beheren en documenten te versioneren met Slate, werd als onderscheidend gezien.
     \item \textbf{Team- en klantenzones:} Het feit dat teams en klanten elk hun eigen afgeschermde omgeving hebben, werd als een grote meerwaarde gezien voor privacy en overzicht.
-    \item \textbf{Notificatiesysteem:} De realtime notificaties via Supabase Realtime zorgen ervoor dat gebruikers altijd op de hoogte zijn van relevante wijzigingen, wat de samenwerking en communicatie binnen teams versterkt.
-    \item \textbf{Integraties:} De koppeling met Google Calendar, Figma en Cloudflare Images werd als zeer praktisch ervaren, vooral omdat deze integraties naadloos in het platform zijn verwerkt.
-    \item \textbf{Bulkacties en templates:} De mogelijkheid om meerdere taken of resources tegelijk te bewerken en om templates te gebruiken voor terugkerende workflows, werd als tijdbesparend en efficiënt ervaren.
+    \item \textbf{Notificatiesysteem:} De realtime notificaties via Supabase Realtime zorgen ervoor dat gebruikers altijd op de hoogte zijn van relevante wijzigingen en communicatie, wat de samenwerking en communicatie binnen teams versterkt.
+    \item \textbf{Integraties:} De koppeling met Google Calendar, Figma en Cloudflare Images werd als zeer praktisch ervaren, vooral omdat deze integraties perfect in het platform zijn verwerkt zodat je niet tussen verschillende tools moet schakelen.
+    \item \textbf{Bulkacties en templates:} De mogelijkheid om meerdere taken of resources tegelijk te bewerken en om templates te gebruiken voor terugkerende workflows, werd als tijdbesparend en efficiënt ervaren zodat je bijvoorbeeld taken met een bepaalde structuur kunt maken en deze dan opnieuw gebruiken voor andere taken of note templates kunt maken.
 \end{itemize}
 
 \subsection{Kwantitatieve en Kwalitatieve Feedback}
-Tijdens de testfase is voornamelijk kwalitatieve feedback verzameld. Gebruikers werden gevraagd naar hun ervaringen met het platform, de gebruiksvriendelijkheid, en de mate waarin het platform hun workflow verbeterde. Er zijn geen uitgebreide kwantitatieve metingen uitgevoerd zoals het exact aantal klikken of precieze tijdsbesparing per taak. Wel gaven gebruikers aan dat zij merkbaar minder tijd kwijt waren aan het wisselen tussen tools en dat veelvoorkomende handelingen sneller en intuïtiever verliepen dan bij de eerder gebruikte platforms. Voor toekomstige evaluaties kan het waardevol zijn om meer gestructureerde kwantitatieve data te verzamelen, bijvoorbeeld door het meten van doorlooptijden of het aantal handelingen per taak.
+Tijdens de testfase is voornamelijk kwalitatieve feedback verzameld. Gebruikers werden gevraagd naar hun ervaringen met het platform, de gebruiksvriendelijkheid, en de mate waarin het platform hun workflow verbeterde. Er zijn geen uitgebreide kwantitatieve metingen uitgevoerd zoals het exact aantal klikken of precieze tijdsbesparing per taak. Wel gaven gebruikers aan dat zij merkbaar minder tijd kwijt waren aan het wisselen tussen tools en dat veelvoorkomende handelingen sneller en makkelijker verliepen dan bij de eerder gebruikte platforms. Voor toekomstige evaluaties kan het waardevol zijn om meer gestructureerde kwantitatieve data te verzamelen, bijvoorbeeld door het meten van tijd dat gebruikers nodig hebben om een taak uit te voeren of het aantal handelingen per taak.
 
 \section{Vergelijking met Bestaande Oplossingen}
 \label{sec:vergelijking-bestaand}
@@ -28,9 +28,9 @@ Op basis van de literatuurstudie (\textcite{stand-van-zaken}) en de praktijkerva
 
 \subsection{Project Management}
 \begin{itemize}
-    \item \textbf{Jira:} Zeer krachtig, maar vaak als complex en overweldigend ervaren voor kleinere teams. Het ontwikkelde platform biedt een intuïtievere interface en snellere toegang tot kernfunctionaliteiten.
+    \item \textbf{Jira:} Zeer krachtig, maar vaak als complex en overweldigend ervaren voor kleinere teams. Het ontwikkelde platform biedt een meer gebruiksvriendelijke interface en snellere toegang tot de basisfunctionaliteiten.
     \item \textbf{Trello:} Gebruiksvriendelijk, maar beperkt in resource management en integraties. Het eigen platform combineert de eenvoud van Trello met uitgebreide resource- en klantfunctionaliteit.
-    \item \textbf{Asana en Monday:} Sterk in task management, maar minder flexibel in het beheren van technische resources en het bieden van een geïntegreerde klantenzone.
+    \item \textbf{Asana en Monday:} Sterk in task management, maar minder flexibel in het beheren van technische resources en het bieden van een samenhangende klantenzone.
     \item \textbf{ClickUp:} Veelzijdig, maar kan overweldigend zijn door het grote aantal opties. Het eigen platform focust op eenvoud, snelheid en directe bewerkbaarheid.
 \end{itemize}
 
@@ -53,12 +53,14 @@ Op basis van de literatuurstudie (\textcite{stand-van-zaken}) en de praktijkerva
 De belangrijkste functionele meerwaarden van het platform zijn:
 \begin{itemize}
     \item \textbf{Centrale toegang:} Eén platform voor projectmanagement, resourcebeheer en klantcommunicatie.
-    \item \textbf{Local-first synchronisatie:} Directe feedback bij bewerkingen, wat zorgt voor een snellere en prettigere gebruikerservaring.
+    \item \textbf{Local-first synchronisatie:} Directe feedback bij bewerkingen, wat zorgt voor een snellere en betere gebruikerservaring.
     \item \textbf{Uitgebreide resource library:} Ondersteuning voor code, design en documenten, inclusief versiebeheer en templates.
     \item \textbf{Team- en klantenzones:} Strikte scheiding van data en toegangsrechten, wat zorgt voor privacy en overzicht.
     \item \textbf{Realtime notificaties:} Gebruikers blijven altijd op de hoogte van relevante wijzigingen.
-    \item \textbf{Naadloze integraties:} Google Calendar, Figma en Cloudflare Images zijn direct geïntegreerd.
+    \item \textbf{Naadloze integraties:} Google Calendar, Figma en monaco editor zijn direct geïntegreerd om zo de gebruikservaring te verbeteren zodat je niet tussen verschillende tools moet schakelen.
     \item \textbf{Bulkacties en inline editing:} Efficiënt beheer van grote hoeveelheden data.
+    \item \textbf{Templates:} Snel terugkerende taken of documenten kunnen worden gemaakt als templates zodat je ze later opnieuw kunt gebruiken.
+    \item \textbf{AI-ondersteuning:} Je kunt de AI gebruiken om je te helpen bij het schrijven van task descriptions, documentatie, etc.
 \end{itemize}
 
 \section{Beperkingen en Verbeterpunten}
@@ -68,9 +70,9 @@ Hoewel het platform veel voordelen biedt, zijn er ook enkele beperkingen en aand
 \begin{itemize}
     \item \textbf{End-to-end testing:} Er zijn nog geen geautomatiseerde end-to-end tests of security audits uitgevoerd. Dit is een belangrijk aandachtspunt voor productiegebruik.
     \item \textbf{Schaalbaarheid:} Hoewel het platform schaalbaar is opgezet, is het nog niet getest met zeer grote teams of projecten.
-    \item \textbf{Gebruikersfeedback:} De huidige evaluatie is vooral gebaseerd op kwalitatieve feedback van een beperkte groep gebruikers. Grootschalige tests met echte web agencies kunnen verdere inzichten opleveren.
+    \item \textbf{Gebruikersfeedback:} De huidige evaluatie is vooral gebaseerd op kwalitatieve feedback van een beperkte groep gebruikers. Uitgebreide tests met echte web agencies kunnen verdere inzichten opleveren.
     \item \textbf{Integraties met andere tools:} Integraties met bijvoorbeeld Slack, Jira of cloud storage (zoals Google Drive) zijn nog niet aanwezig, maar kunnen in de toekomst worden toegevoegd.
-    \item \textbf{AI-functionaliteit:} Hoewel in de literatuurstudie AI-ondersteunde features als trend worden genoemd, zijn deze nog niet geïmplementeerd.
+
 \end{itemize}
 
 \subsection{Bugs en Feature Requests uit Testfase}
@@ -104,8 +106,69 @@ Op basis van de analyse worden de volgende aanbevelingen gedaan:
     \item \textbf{Grootschalige gebruikersstudies:} Verzamel feedback van verschillende web agencies om het platform verder te optimaliseren.
 \end{itemize}
 
+\section{Diepgaande Analyse van Gebruikerservaring}
+\label{sec:diepgaande-gebruikerservaring}
+
+Tijdens de evaluatie van het platform werd niet alleen gekeken naar de functionele werking, maar ook naar de algehele gebruikerservaring (UX). Testgebruikers gaven aan dat de interface overzichtelijk en intuïtief aanvoelde, mede dankzij de duidelijke navigatiestructuur en het gebruik van consistente UI-componenten. De mogelijkheid om snel te schakelen tussen persoonlijke en team views werd als bijzonder waardevol ervaren, omdat dit inspeelt op de dagelijkse realiteit van web agencies waar zowel individueel als in teamverband wordt gewerkt.
+
+De drag-and-drop functionaliteit voor taken, de inline editing en de bulkacties werden als grote tijdsbesparers genoemd. Gebruikers hoefden minder te klikken en konden sneller wijzigingen doorvoeren dan bij traditionele tools. De integratie van notificaties en real-time updates zorgde ervoor dat teamleden altijd op de hoogte waren van relevante wijzigingen, wat de samenwerking en communicatie aanzienlijk verbeterde.
+
+\section{Impact op Workflow en Productiviteit}
+\label{sec:impact-workflow}
+
+Hoewel er geen uitgebreide kwantitatieve metingen zijn uitgevoerd, gaven gebruikers aan dat hun workflow merkbaar efficiënter werd. Het platform bracht alle benodigde tools samen in één omgeving, waardoor context-switching tussen verschillende applicaties tot een minimum werd beperkt. Dit resulteerde in minder afleiding, minder kans op fouten en een hogere productiviteit.
+
+De local-first aanpak van data synchronisatie zorgde ervoor dat gebruikers direct feedback kregen bij het uitvoeren van acties, zelfs bij een trage internetverbinding. Dit werd als een groot voordeel ervaren ten opzichte van platforms die uitsluitend server-side werken, waar vertragingen kunnen optreden bij het opslaan of ophalen van data.
+
+\section{Analyse van Resourcebeheer en Documentatie}
+\label{sec:analyse-resourcebeheer}
+
+De geïntegreerde resource library werd door testers als een van de sterkste punten van het platform genoemd. In tegenstelling tot veel bestaande oplossingen, waar code, design assets en documentatie verspreid zijn over verschillende tools, biedt het platform een centrale plek voor alle soorten resources. De integratie van Monaco Editor voor code, Figma voor design en Slate voor documenten maakt het mogelijk om efficiënt samen te werken en kennis te delen binnen het team.
+
+Het versiebeheer van documenten, waarbij elke wijziging als een nieuwe versie wordt opgeslagen, werd als zeer waardevol ervaren. Hierdoor kunnen teamleden eenvoudig terugkeren naar eerdere versies en is het risico op dataverlies of conflicten minimaal. De mogelijkheid om templates te maken voor veelvoorkomende documenten en taken draagt bij aan een gestroomlijnde workflow.
+
+\section{Samenwerking en Klantcommunicatie}
+\label{sec:samenwerking-klant}
+
+De klantenzone werd door zowel interne gebruikers als testklanten positief beoordeeld. Klanten hebben een eigen, afgeschermde omgeving waarin ze de voortgang van hun projecten kunnen volgen, documenten kunnen inzien en feedback kunnen geven. Dit verhoogt de transparantie en betrokkenheid van de klant, wat in de praktijk leidt tot snellere goedkeuringen en minder misverstanden.
+
+De mogelijkheid voor klanten om revisies aan te vragen en direct te communiceren met het team via het platform werd als een groot voordeel gezien ten opzichte van traditionele communicatie via e-mail of losse tools. Dit draagt bij aan een meer gestructureerde en traceerbare samenwerking.
+
+\section{Technische Stabiliteit en Performance}
+\label{sec:technische-stabiliteit}
+
+Tijdens de testfase bleek het platform technisch stabiel te functioneren. De combinatie van Next.js, Supabase en Prisma zorgde voor betrouwbare dataopslag en snelle API-responsen. De serverless architectuur maakte het mogelijk om eenvoudig op te schalen bij toenemend gebruik, zonder dat dit ten koste ging van de performance.
+
+Wel werden er enkele aandachtspunten genoteerd bij het uitvoeren van bulkacties of het synchroniseren van grote hoeveelheden data. Hier trad soms een lichte vertraging op, vooral bij een trage internetverbinding. Dit werd deels ondervangen door de local-first aanpak, maar verdere optimalisatie is wenselijk voor grootschalig gebruik.
+
+\section{Security en Privacy in de Praktijk}
+\label{sec:security-privacy-analyse}
+
+Hoewel er nog geen formele security audits of pentests zijn uitgevoerd, werd tijdens de ontwikkeling en testfase veel aandacht besteed aan basisprincipes van security en privacy. Authenticatie en autorisatie zijn strikt geïmplementeerd, met duidelijke rolverdeling en toegangscontrole op team- en projectniveau. Gevoelige data wordt versleuteld opgeslagen en inputvalidatie vindt plaats op zowel client- als server-side.
+
+Gebruikers gaven aan dat zij vertrouwen hadden in de privacy van hun data, mede dankzij de duidelijke scheiding tussen teams en klantenzones. Voor productiegebruik wordt aanbevolen om een formele audit uit te voeren en geautomatiseerde security tests op te zetten.
+
+\section{Vergelijkende Casestudy's}
+\label{sec:casestudy}
+
+Om de meerwaarde van het platform verder te onderbouwen, werden enkele praktijkcases uitgewerkt waarin het platform werd ingezet naast bestaande tools. In deze casestudy's werd gekeken naar de snelheid van projectopzet, het gemak van resourcebeheer, de samenwerking binnen teams en de communicatie met klanten.
+
+Uit de casestudy's bleek dat het platform vooral uitblinkt in situaties waar veel verschillende soorten resources (code, design, documentatie) en stakeholders (ontwikkelaars, designers, klanten) samenkomen. De centrale toegang tot alle functionaliteiten en de realtime samenwerking zorgden voor een snellere doorlooptijd en minder fouten.
+
+\section{Gebruikersfeedback en Toekomstige Wensen}
+\label{sec:feedback-wensen}
+
+Naast de reeds genoemde feature requests uit de testfase, gaven gebruikers aan dat zij graag meer geavanceerde zoek- en filtermogelijkheden zouden zien, met name binnen grote projecten en resource libraries. Ook werd gevraagd om meer automatisering, zoals automatische reminders, slimme taakverdeling en integratie met meer externe tools.
+
+Enkele gebruikers gaven aan dat een mobiele app of een geoptimaliseerde mobiele webversie de toegankelijkheid verder zou vergroten, vooral voor teams die vaak onderweg zijn of op locatie werken. Tot slot werd het belang van uitgebreide rapportage- en analysemogelijkheden genoemd, zodat teams beter kunnen sturen op voortgang en resourcegebruik.
+
+\section{Visualisatie van Resultaten}
+\label{sec:visualisatie}
+
+Voor een nog diepgaandere analyse kunnen in de toekomst tabellen, grafieken of heatmaps worden toegevoegd die bijvoorbeeld het aantal uitgevoerde taken, de doorlooptijd per projectfase of de verdeling van resources visualiseren. Dit zou het mogelijk maken om de impact van het platform nog objectiever te meten en te vergelijken met bestaande oplossingen.
+
 \section{Samenvatting}
 \label{sec:samenvatting}
 
-Het ontwikkelde platform biedt een geïntegreerde oplossing voor de belangrijkste uitdagingen van web agencies, zoals geïdentificeerd in de literatuurstudie en praktijkanalyse. Door de combinatie van projectmanagement, resourcebeheer, klantcommunicatie en realtime integraties onderscheidt het platform zich van bestaande oplossingen. Verdere optimalisatie en uitbreiding kunnen de meerwaarde voor het werkveld nog vergroten.
+Het ontwikkelde platform biedt een geïntegreerde oplossing voor de belangrijkste uitdagingen van web agencies, zoals geïdentificeerd in de literatuurstudie en praktijkanalyse. Door de combinatie van projectmanagement, resourcebeheer, klantcommunicatie en realtime integraties onderscheidt het platform zich van bestaande oplossingen. De diepgaande analyse van gebruikerservaring, workflow, resourcebeheer, samenwerking en technische stabiliteit bevestigt de meerwaarde van het platform. Verdere optimalisatie, uitbreiding van functionaliteit en grootschalige praktijkproeven zullen de impact op het werkveld nog verder vergroten.
 
